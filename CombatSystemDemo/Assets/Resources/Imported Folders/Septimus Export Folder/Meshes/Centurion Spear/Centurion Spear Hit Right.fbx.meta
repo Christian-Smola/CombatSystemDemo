@@ -1,0 +1,460 @@
+fileFormatVersion: 2
+guid: 5bfb7d53d773db74da4fe747e66691b9
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: septimus_Pelvis
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: septimus_LThigh
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: septimus_RThigh
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: septimus_LCalf
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: septimus_RCalf
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: septimus_LFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: septimus_RFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: septimus_Spine1
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: septimus_Spine2
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: septimus_Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: septimus_Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: septimus_LCollarbone
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: septimus_RCollarbone
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: septimus_LUpperarm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: septimus_RUpperarm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: septimus_LForearm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: septimus_RForearm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: septimus_LPalm
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: septimus_RPalm
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: septimus_LDigit
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: septimus_RDigit
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: septimus_Ribcage
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: septimus(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: septimus
+      parentName: septimus(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.5000002, y: -0.5000001, z: -0.49999988, w: 0.49999997}
+      scale: {x: 1, y: 1, z: 1}
+    - name: septimus_body
+      parentName: septimus(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: septimus_Pelvis
+      parentName: septimus(Clone)
+      position: {x: 0.00000004781334, y: 0.90647006, z: -0.07193388}
+      rotation: {x: 0.49912703, y: -0.5008716, z: -0.4991269, w: 0.5008715}
+      scale: {x: 1.0000012, y: 1.0000012, z: 1}
+    - name: septimus_apronL
+      parentName: septimus_Pelvis
+      position: {x: -0.0121846, y: 0.17427643, z: 0.042769875}
+      rotation: {x: -0.000000029802322, y: 0.00000020861626, z: 0.99998486, w: 0.0055113733}
+      scale: {x: 1.0000008, y: 1.000001, z: 1.0000008}
+    - name: septimus_apronR
+      parentName: septimus_Pelvis
+      position: {x: -0.0121846, y: 0.17427638, z: -0.04509729}
+      rotation: {x: -0.000000029802322, y: 0.00000020861626, z: 0.99998486, w: 0.0055113733}
+      scale: {x: 1.0000008, y: 1.000001, z: 1.0000008}
+    - name: septimus_LThigh
+      parentName: septimus_Pelvis
+      position: {x: -0.017192535, y: 0.046885356, z: 0.08785214}
+      rotation: {x: -0.00006121397, y: 0.99933803, z: 0.029944733, w: 0.02065967}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1.0000005}
+    - name: septimus_LCalf
+      parentName: septimus_LThigh
+      position: {x: -0.42999408, y: 0.000001926422, z: 0.0000008392334}
+      rotation: {x: 0.000121108744, y: -0.004366301, z: 0.05976527, w: 0.998203}
+      scale: {x: 1.0000007, y: 1.0000013, z: 1.000001}
+    - name: septimus_LFoot
+      parentName: septimus_LCalf
+      position: {x: -0.4113852, y: -0.000000009536743, z: 0.000000038146972}
+      rotation: {x: -0.043454032, y: 0.0053697093, z: -0.5711029, w: 0.81970996}
+      scale: {x: 1.0000019, y: 1.0000012, z: 1.0000025}
+    - name: septimus_LDigit
+      parentName: septimus_LFoot
+      position: {x: -0.143665, y: 0, z: -0.000000019073486}
+      rotation: {x: 0.00031197627, y: -0.00073457917, z: -0.23129019, w: 0.9728845}
+      scale: {x: 0.9999995, y: 1.0000007, z: 0.9999996}
+    - name: septimus_RThigh
+      parentName: septimus_Pelvis
+      position: {x: -0.017192535, y: 0.046885338, z: -0.0878522}
+      rotation: {x: -0.000059828162, y: 0.99933815, z: -0.029942602, w: -0.020659745}
+      scale: {x: 1.0000019, y: 1.0000017, z: 1.0000026}
+    - name: septimus_RCalf
+      parentName: septimus_RThigh
+      position: {x: -0.4299942, y: 0.0000019216536, z: -0.0000009155273}
+      rotation: {x: -0.00010030538, y: 0.004434734, z: 0.059676092, w: 0.998208}
+      scale: {x: 1.0000031, y: 1.0000024, z: 1.0000023}
+    - name: septimus_RFoot
+      parentName: septimus_RCalf
+      position: {x: -0.411385, y: 0.000000009536743, z: 0.000000009536743}
+      rotation: {x: 0.043404516, y: -0.005538872, z: -0.57093173, w: 0.8198307}
+      scale: {x: 1.0000002, y: 0.99999934, z: 1.0000004}
+    - name: septimus_RDigit
+      parentName: septimus_RFoot
+      position: {x: -0.14366508, y: 0, z: 0}
+      rotation: {x: -0.00033990294, y: 0.00085214386, z: -0.23141018, w: 0.9728559}
+      scale: {x: 1.0000011, y: 1.0000001, z: 1.0000012}
+    - name: septimus_scabard_bone
+      parentName: septimus_Pelvis
+      position: {x: -0.0049687196, y: 0.07400949, z: -0.19896394}
+      rotation: {x: 0.00124228, y: 0.23527402, z: -0.97191477, w: -0.00513193}
+      scale: {x: 1.000002, y: 1.0000024, z: 1.0000031}
+    - name: gladius
+      parentName: septimus_scabard_bone
+      position: {x: 0.16309181, y: 0.00023926735, z: -0.00100914}
+      rotation: {x: 0.49071175, y: 0.50752836, z: 0.49549344, w: 0.5060664}
+      scale: {x: 1, y: 1, z: 1}
+    - name: septimus_Spine1
+      parentName: septimus_Pelvis
+      position: {x: -0.045646973, y: -0.0034924936, z: -0.000000008667266}
+      rotation: {x: -0.000000044703484, y: -0.000000044703484, z: -0.111450866, w: 0.99377}
+      scale: {x: 1.0000007, y: 1.0000013, z: 1.0000012}
+    - name: septimus_Spine2
+      parentName: septimus_Spine1
+      position: {x: -0.2519187, y: 0, z: 1.4551915e-13}
+      rotation: {x: 0.000000013536811, y: 0.000000069154005, z: 0.15155317, w: 0.98844916}
+      scale: {x: 1.0000008, y: 1.0000007, z: 0.99999994}
+    - name: septimus_Ribcage
+      parentName: septimus_Spine2
+      position: {x: -0.21460128, y: 0.000000009536743, z: -5.820766e-13}
+      rotation: {x: 0.00000006254072, y: 0.0000009171863, z: -0.46871603, w: 0.8833489}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000001}
+    - name: scutum
+      parentName: septimus_Ribcage
+      position: {x: 0.22677177, y: -0.23660444, z: 0.08810204}
+      rotation: {x: -0.027726991, y: -0.69512784, z: 0.0619359, w: 0.7156762}
+      scale: {x: 1.0000024, y: 0.9999972, z: 0.9999992}
+    - name: septimus_LCollarbone
+      parentName: septimus_Ribcage
+      position: {x: 0.04366989, y: 0.1054343, z: 0.030406203}
+      rotation: {x: 0.0608138, y: 0.6913484, z: 0.1680596, w: 0.700068}
+      scale: {x: 1.0000011, y: 1.0000025, z: 1.0000019}
+    - name: septimus_LUpperarm
+      parentName: septimus_LCollarbone
+      position: {x: -0.17149518, y: 0.000000019073486, z: -0.00000030517577}
+      rotation: {x: 0.13225427, y: 0.02210241, z: -0.16230574, w: 0.9775874}
+      scale: {x: 1.0000014, y: 1.0000002, z: 1.0000017}
+    - name: septimus_LForearm
+      parentName: septimus_LUpperarm
+      position: {x: -0.27863196, y: 0.000000019073486, z: 0}
+      rotation: {x: 0.049052715, y: -0.017630167, z: -0.03371646, w: 0.99807125}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000005}
+    - name: septimus_LPalm
+      parentName: septimus_LForearm
+      position: {x: -0.23308833, y: -0.000000019073486, z: 0.00000030517577}
+      rotation: {x: -0.7300248, y: -0.21192132, z: -0.03249338, w: 0.6489202}
+      scale: {x: 1.0000001, y: 1.0000037, z: 0.99999934}
+    - name: scutum_deployed_parent
+      parentName: septimus_LPalm
+      position: {x: -0.040484734, y: -0.014377899, z: 0.020155258}
+      rotation: {x: -0.6167815, y: 0.28726012, z: -0.33715987, w: 0.6506808}
+      scale: {x: 0.9999995, y: 0.99999976, z: 1.0000006}
+    - name: scutum_deployed
+      parentName: scutum_deployed_parent
+      position: {x: -0, y: -5.9604643e-10, z: 0}
+      rotation: {x: 0.00000042541916, y: 0.000000056634626, z: -0.70710707, w: 0.7071065}
+      scale: {x: 1.0000018, y: 0.99999774, z: 0.99999905}
+    - name: septimus_Neck
+      parentName: septimus_Ribcage
+      position: {x: -0.00079315185, y: -0.0034924746, z: -0.000000006707414}
+      rotation: {x: -0.000000109380466, y: -0.00000060318655, z: 0.20971587, w: 0.97776234}
+      scale: {x: 1.0000013, y: 1.0000018, z: 1.0000007}
+    - name: septimus_Head
+      parentName: septimus_Neck
+      position: {x: -0.11856674, y: 0.000000038146972, z: 2.910383e-13}
+      rotation: {x: -0, y: 0.000000029802322, z: 0.10312137, w: 0.99466884}
+      scale: {x: 1.0000014, y: 1.0000015, z: 1.0000007}
+    - name: plumage
+      parentName: septimus_Head
+      position: {x: 1.5286337, y: 0.017897477, z: 0.0000015550728}
+      rotation: {x: 0.7071068, y: 0.000005747376, z: -0.7071068, w: -0.0000062757135}
+      scale: {x: 1.0000001, y: 0.99999976, z: 0.9999999}
+    - name: septimus_RCollarbone
+      parentName: septimus_Ribcage
+      position: {x: 0.04366989, y: 0.10543433, z: -0.030406183}
+      rotation: {x: 0.060813904, y: 0.69134814, z: -0.1680601, w: -0.7000681}
+      scale: {x: 1.000003, y: 1.0000017, z: 1.0000026}
+    - name: septimus_RUpperarm
+      parentName: septimus_RCollarbone
+      position: {x: -0.17149518, y: 0.000000019073486, z: -0.00000015258789}
+      rotation: {x: -0.13225462, y: -0.022102496, z: -0.16230634, w: 0.9775872}
+      scale: {x: 1.0000029, y: 1, z: 1.000002}
+    - name: septimus_RForearm
+      parentName: septimus_RUpperarm
+      position: {x: -0.27863222, y: -0.000000009536743, z: -0.00000015258789}
+      rotation: {x: -0.049052827, y: 0.017629435, z: -0.03371696, w: 0.99807125}
+      scale: {x: 1.0000008, y: 1.0000004, z: 1.0000007}
+    - name: septimus_RPalm
+      parentName: septimus_RForearm
+      position: {x: -0.23308815, y: -0.000000009536743, z: 0}
+      rotation: {x: 0.7541313, y: 0.006316832, z: 0.0011261179, w: 0.6566923}
+      scale: {x: 1.0000026, y: 0.99999785, z: 1.0000045}
+    - name: weapon_parent
+      parentName: septimus_RPalm
+      position: {x: -0.061341703, y: -0.010272064, z: -0.0010253143}
+      rotation: {x: 0.63341534, y: 0.7733138, z: -0.014763494, w: -0.023514189}
+      scale: {x: 1.0000015, y: 1.0000002, z: 0.9999995}
+    - name: gladius_deployed
+      parentName: weapon_parent
+      position: {x: 0.000099487304, y: 0.0017906951, z: -0.009271395}
+      rotation: {x: 0.72318405, y: -0.69064605, z: -0.0024264883, w: -0.0026424734}
+      scale: {x: 1.0000006, y: 0.9999981, z: 1.0000011}
+    - name: pillum
+      parentName: weapon_parent
+      position: {x: -0, y: 0, z: 0.00000007390976}
+      rotation: {x: -0.0000002356245, y: -0.0000000055879377, z: 0.000000014901157,
+        w: 1}
+      scale: {x: 1.0000001, y: 1.0000005, z: 1.0000006}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 37b2e3db6effcb643ac67c866f6656b5,
+    type: 3}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 2
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
