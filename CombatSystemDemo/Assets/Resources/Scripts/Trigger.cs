@@ -10,9 +10,9 @@ public class Trigger : MonoBehaviour
     {
         public GameObject GO;
         public Collider col;
-        public NewMultiThreadingTest.Soldier DetectedSoldier;
+        public CombatSystem.Soldier DetectedSoldier;
 
-        public Detection(GameObject obj, Collider C, NewMultiThreadingTest.Soldier sol)
+        public Detection(GameObject obj, Collider C, CombatSystem.Soldier sol)
         {
             GO = obj;
             col = C;
@@ -21,7 +21,7 @@ public class Trigger : MonoBehaviour
     }
 
     public List<Detection> DetectedObjects = new List<Detection>();
-    public NewMultiThreadingTest.Soldier SoldierReference;
+    public CombatSystem.Soldier SoldierReference;
 
     private void OnTriggerEnter(Collider other)
     {
