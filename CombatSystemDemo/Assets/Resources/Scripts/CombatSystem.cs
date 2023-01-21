@@ -664,7 +664,12 @@ public class CombatSystem : MonoBehaviour
                             SelectedDivisions[x].DivisionGO = go;
 
                             //SetAnimations 
-                            SetAnimations(AnimationType.Idle, SelectedDivisions[x]);
+                            List<Soldier> CombinedSoldierLists = new List<Soldier>();
+
+                            foreach (Division div in SelectedDivisions)
+                                CombinedSoldierLists.AddRange(div.SoldierList);
+
+                            SetAnimations(AnimationType.Idle, CombinedSoldierLists);
 
                             if (Mathf.Abs(AngleChange) > 140f || Mathf.Abs(AngleChange) < 220f)
                             {
@@ -694,13 +699,23 @@ public class CombatSystem : MonoBehaviour
             ListofDivisionPlacementUIElements.Clear();
         }
 
+        QueuedFunctions();
+    }
+
+    public void QueuedFunctions()
+    {
+        List<Action> ActionList = new List<Action>();
+
         lock (FunctionsToRunInMainThread)
         {
             foreach (Action act in FunctionsToRunInMainThread)
-                act();
+                ActionList.Add(act);
 
             FunctionsToRunInMainThread.Clear();
         }
+
+        foreach (Action act in ActionList)
+            act();
     }
 
     public void ChildThreadFunction()
@@ -1510,7 +1525,7 @@ public class CombatSystem : MonoBehaviour
                         soldier.NavAgent.isStopped = false;
                 }
 
-                FunctionsToRunInChildThread.Add(() => SetAnimations(AnimationType.Walk, div));
+                FunctionsToRunInChildThread.Add(() => SetAnimations(AnimationType.Walk, div.SoldierList));
             }
             else
                 StartCoroutine(StaggerMarch2(ListOfSoldierLists, div, FlipRows));
@@ -1523,154 +1538,49 @@ public class CombatSystem : MonoBehaviour
         }
     }
 
-    public void SetAnimations(AnimationType AnimType, Division div = null, Soldier sol = null, List<Soldier> SoldierList = null, bool CalledFromChildThread = true)
+    public void SetAnimations(AnimationType AnimType, List<Soldier> SoldierList)
     {
         try
         {
-            if (div != null)
+            if (SoldierList.Count == 0)
+                return;
+
+            //The following is based on the assumption that all units in a division have the same animation list
+            List<Animation> AnimationList = SoldierList[0].SubType.AnimationList.Where(A => A.Type == AnimType).ToList();
+
+            List<Soldier> SoldiersToUpdate = SoldierList.Where(S => !AnimationList.Contains(S.AnimState) && S.IsAlive).ToList();
+
+            if (SoldiersToUpdate.Count == 0)
+                return;
+
+            Action action = () =>
             {
-                if (div.SoldierList[0].SubType.AnimationList.Where(A => A.Type == AnimType).ToList()[0] == div.SoldierList[0].AnimState)
-                    return;
-
-                string strRestOfDeactivationPath = div.SoldierList[0].AnimState.AnimationName;
-
-                string strRestOfActivationPath = div.SoldierList[0].SubType.AnimationList.Where(A => A.Type == AnimType).ToList()[0].AnimationName;
-
-                div.ActivationList.Clear();
-
-                foreach (Soldier soldier in div.SoldierList)
+                foreach (Soldier sol in SoldiersToUpdate)
                 {
-                    soldier.AnimState = div.SoldierList[0].SubType.AnimationList.Where(A => A.Type == AnimType).ToList()[0];
-                    div.ActivationList.Add(new ActivateAndDeactivate(soldier.rank.ToString() + " " + soldier.state.ToString() + " " + strRestOfActivationPath, soldier.rank.ToString() + " " + soldier.state.ToString() + " " + strRestOfDeactivationPath));
-                }
+                    sol.AnimState = sol.SubType.AnimationList.Where(A => A.Type == AnimType).ToList()[0];
 
-                Action action = () =>
-                {
-                    for (int x = 0; x < div.SoldierList.Count; x++)
+                    foreach (Transform child in sol.SoldierGO.transform)
                     {
-                        try
+                        if (child.name == sol.rank.ToString() + " " + sol.state.ToString() + " " + sol.AnimState.AnimationName)
                         {
-                            if (div.SoldierList[x].IsAlive != true)
-                            {
-                                Debug.Log("How'd we even get to this point?");
-                                continue;
-                            }
+                            child.gameObject.SetActive(true);
 
-                            div.SoldierList[x].SoldierGO.transform.Find(div.ActivationList[x].Deactivate).gameObject.SetActive(false);
-
-                            MeshRenderer renderer = div.SoldierList[x].SoldierGO.transform.Find(div.ActivationList[x].Deactivate).gameObject.GetComponent<MeshRenderer>();
-
-                            renderer.material.SetFloat(renderer.material.shader.GetPropertyName(7), 0);
-
-                            div.SoldierList[x].SoldierGO.transform.Find(div.ActivationList[x].Activate).gameObject.SetActive(true);
-
-                            renderer = div.SoldierList[x].SoldierGO.transform.Find(div.ActivationList[x].Activate).gameObject.GetComponent<MeshRenderer>();
+                            MeshRenderer renderer = child.gameObject.GetComponent<MeshRenderer>();
 
                             renderer.material.SetFloat(renderer.material.shader.GetPropertyName(7), 1);
                             renderer.material.SetFloat(renderer.material.shader.GetPropertyName(8), Shader.GetGlobalVector("_Time").y);
                         }
-                        catch (Exception ex)
-                        {
-                            Debug.Log(ex.Message);
-                        }
+                        else if (child.name == "Cone")
+                            continue;
+                        else
+                            child.gameObject.SetActive(false);
                     }
-                };
+                }
+            };
 
-                lock (FunctionsToRunInMainThread)
-                    FunctionsToRunInMainThread.Add(action);
-            }
-            else if (sol != null)
+            lock (FunctionsToRunInMainThread)
             {
-                Animation Anim = sol.SubType.AnimationList.Where(A => A.Type == AnimType).ToList()[0];
-
-                //This Section currently only works in the Main Thread
-                //Allowing it to work in the child thread shouldn't break anything
-                if (Anim == sol.AnimState)
-                    return;
-
-                if (!sol.IsAlive && Anim.Type != AnimationType.Death)
-                {
-                    Debug.Log("How'd we even get to this point? Part 2");
-                    return;
-                }
-
-                sol.SoldierGO.transform.Find(sol.rank.ToString() + " " + sol.state.ToString() + " " + sol.AnimState.AnimationName).gameObject.SetActive(false);
-
-                MeshRenderer renderer = sol.SoldierGO.transform.Find(sol.rank.ToString() + " " + sol.state.ToString() + " " + sol.AnimState.AnimationName).gameObject.GetComponent<MeshRenderer>();
-
-                renderer.material.SetFloat(renderer.material.shader.GetPropertyName(7), 0);
-
-                sol.SoldierGO.transform.Find(sol.rank.ToString() + " " + sol.state.ToString() + " " + Anim.AnimationName).gameObject.SetActive(true);
-
-                renderer = sol.SoldierGO.transform.Find(sol.rank.ToString() + " " + sol.state.ToString() + " " + Anim.AnimationName).gameObject.GetComponent<MeshRenderer>();
-
-                renderer.material.SetFloat(renderer.material.shader.GetPropertyName(7), 1);
-                renderer.material.SetFloat(renderer.material.shader.GetPropertyName(8), Shader.GetGlobalVector("_Time").y);
-
-                sol.AnimState = Anim;
-
-            }
-            else if (SoldierList != null)
-            {
-                if (SoldierList[0].SubType.AnimationList.Where(A => A.Type == AnimType).ToList()[0] == SoldierList[0].AnimState)
-                    return;
-
-                List<ActivateAndDeactivate> ActivationList = new List<ActivateAndDeactivate>();
-
-                string strRestOfDeactivationPath = /*" " + SoldierList[0].AssignedDivision.state.ToString() + " " +*/ SoldierList[0].AnimState.AnimationName;
-
-                string strRestOfActivationPath = /*" " + SoldierList[0].AssignedDivision.state.ToString() + " " +*/ SoldierList[0].SubType.AnimationList.Where(A => A.Type == AnimType).ToList()[0].AnimationName;
-
-                if (SoldierList.Where(S => !S.IsAlive).ToList().Count > 0)
-                {
-                    Debug.Log("How'd we get here? Part 3");
-                }
-
-                foreach (Soldier soldier in SoldierList)
-                {
-                    soldier.AnimState = soldier.SubType.AnimationList.Where(A => A.Type == AnimType).ToList()[0];
-                    ActivationList.Add(new ActivateAndDeactivate(soldier.rank.ToString() + " " + soldier.state.ToString() + " " + strRestOfActivationPath, soldier.rank.ToString() + " " + soldier.state.ToString() + " " + strRestOfDeactivationPath));
-                }
-
-                Action action = () =>
-                {
-                    for (int x = 0; x < SoldierList.Count; x++)
-                    {
-                        try
-                        {
-                            //Important
-                            //The section above needs to be updated with the shader code in this section
-                            SoldierList[x].SoldierGO.transform.Find(ActivationList[x].Deactivate).gameObject.SetActive(false);
-
-                            MeshRenderer renderer = SoldierList[x].SoldierGO.transform.Find(ActivationList[x].Deactivate).gameObject.GetComponent<MeshRenderer>();
-
-                            renderer.material.SetFloat(renderer.material.shader.GetPropertyName(7), 0);
-
-                            SoldierList[x].SoldierGO.transform.Find(ActivationList[x].Activate).gameObject.SetActive(true);
-
-                            renderer = SoldierList[x].SoldierGO.transform.Find(ActivationList[x].Activate).gameObject.GetComponent<MeshRenderer>();
-
-                            renderer.material.SetFloat(renderer.material.shader.GetPropertyName(7), 1);
-                            renderer.material.SetFloat(renderer.material.shader.GetPropertyName(8), Shader.GetGlobalVector("_Time").y);
-                        }
-                        catch (Exception ex)
-                        {
-                            Debug.Log(ex.Message);
-                        }
-                    }
-                };
-
-                if (CalledFromChildThread)
-                {
-                    lock (FunctionsToRunInMainThread)
-                    {
-                        FunctionsToRunInMainThread.Add(action);
-                    }
-                }
-                else
-                {
-                    action();
-                }
+                FunctionsToRunInMainThread.Add(action);
             }
         }
         catch (Exception ex)
@@ -1809,7 +1719,7 @@ public class CombatSystem : MonoBehaviour
             //When we do the below, we recieve an error saying that the FunctionsToRunInMainThread Collection was modified
             //That's cause this is a function being run from that collection
             if (Temp.Count > 0)
-                SetAnimations(AnimationType.CombatIdle, null, null, Temp, false);
+                SetAnimations(AnimationType.CombatIdle, Temp);
 
             //But doing this is totally fine
             //if (Temp.Count > 0)
@@ -1910,7 +1820,7 @@ public class CombatSystem : MonoBehaviour
                 if (sol.NavAgent.isStopped)
                     sol.NavAgent.isStopped = false;
 
-                SetAnimations(AnimationType.Walk, null, sol);
+                SetAnimations(AnimationType.Walk, new List<Soldier> { sol });
 
                 LastYValue = (int)sol.PositionInFormation.y;
             }
@@ -2494,11 +2404,6 @@ public class CombatSystem : MonoBehaviour
                     //If Front_Slope is horizontal or vertical and Left_Slope is not
                     if ((double.IsInfinity(Front_Slope) || Front_Slope == 0) && (Left_Slope != 0 && !double.IsInfinity(Left_Slope)))
                     {
-                        if (Front_Slope == 0)
-                        {
-                            Debug.Log("Taco");
-                        }
-
                         if (double.IsInfinity(Front_Slope))
                         {
                             Debug.Log("Taco 2");
@@ -2546,30 +2451,18 @@ public class CombatSystem : MonoBehaviour
                     //If Front_Slope is horizontal or vertical but Right_Slope is not
                     if ((double.IsInfinity(Front_Slope) || Front_Slope == 0) && (!double.IsInfinity(Right_Slope) && Right_Slope != 0))
                     {
-                        if (Front_Slope == 0)
-                            Debug.Log("Dicks and Butts 4");
-
                         if (double.IsInfinity(Front_Slope))
                         {
-                            Debug.Log("Dicks and Butts 3");
                             FrontRightCorner = new Vector3(TopRightSoldier.SoldierGO.transform.position.x, 0f, (Right_Slope * TopRightSoldier.SoldierGO.transform.position.x) + Right_Intercept);
-                            //UnfreezeGame = false;
                         }
                     }
 
                     //If Right_Slope is horizontal or vertical but Front_Slope is not
                     if ((!double.IsInfinity(Front_Slope) && Front_Slope != 0) && (double.IsInfinity(Right_Slope) || Right_Slope == 0))
                     {
-                        if (Right_Slope == 0)
-                        {
-                            Debug.Log("Dicks and Butts 2");
-                        }
-
                         if (double.IsInfinity(Right_Slope))
                         {
-                            //Debug.Log("Dicks and Butts 1");
                             FrontRightCorner = new Vector3(RightTopSoldier.SoldierGO.transform.position.x, 0f, (Front_Slope * RightTopSoldier.SoldierGO.transform.position.x) + Front_Intercept);
-                            //UnfreezeGame = false;
                         }
                     }
                 }
@@ -2590,7 +2483,7 @@ public class CombatSystem : MonoBehaviour
                     {
                         //BackLeftCorner = new Vector3();
                         Debug.Log("Does this ever get hit?");
-                        UnfreezeGame = false;
+                        //UnfreezeGame = false;
                     }
 
                     //If Back_Slope is horizontal or vertical but Left_Slope is not
@@ -3148,7 +3041,7 @@ public class CombatSystem : MonoBehaviour
                         FunctionsToRunInMainThread.Add(act);
                 }
 
-                if (!div.IsInCombat && div.NearbyEnemies && div.SoldierList[0].AnimState.Type != AnimationType.CombatIdle)
+                if (!div.IsInCombat && div.NearbyEnemies && div.SoldierList.Where(S => S.AnimState.Type != AnimationType.CombatIdle).ToList().Count > 0)
                 {
                     if (div.IsInMotion)
                     {
@@ -3157,14 +3050,14 @@ public class CombatSystem : MonoBehaviour
                     else
                     {
                         //Attack Ready
-                        SetAnimations(AnimationType.CombatIdle, div);
+                        SetAnimations(AnimationType.CombatIdle, div.SoldierList);
 
                     }
                 }
                 else if (!div.NearbyEnemies && !div.IsInMotion && div.SoldierList.Where(S => S.AnimState.AnimationName != "Idle").ToList().Count > 0)
                 {
                     //Idle
-                    SetAnimations(AnimationType.Idle, null, null, div.SoldierList.Where(S => S.IsAlive).ToList());
+                    SetAnimations(AnimationType.Idle, div.SoldierList.Where(S => S.IsAlive).ToList());
                 }
 
                 if (div.IsInMotion)
@@ -3215,7 +3108,7 @@ public class CombatSystem : MonoBehaviour
                                 sol.IsInMotion = false;
                                 sol.NavAgent.isStopped = true;
 
-                                SetAnimations(type, null, sol);
+                                SetAnimations(type, new List<Soldier> { sol });
                                 sol.SoldierGO.transform.rotation = div.DivisionGO.transform.rotation;
                             }
                         };
@@ -3244,7 +3137,7 @@ public class CombatSystem : MonoBehaviour
         sol.AnimationTimer.Elapsed += (object sender, System.Timers.ElapsedEventArgs e) => AnimationElapsed(sol);
         sol.AnimationTimer.Start();
 
-        SetAnimations(Anim.Type, null, sol);
+        SetAnimations(Anim.Type, new List<Soldier> { sol });
     }
 
     public void DeathTimerLogic(Soldier sol)
@@ -3258,13 +3151,16 @@ public class CombatSystem : MonoBehaviour
 
         sol.SoldierGO.GetComponent<BoxCollider>().enabled = false;
 
-        SetAnimations(AnimationType.Death, null, sol);
+        SetAnimations(AnimationType.Death, new List<Soldier> { sol });
     }
 
     public void AnimationElapsed(Soldier sol)
     {
         try
         {
+            if (sol.IsInMotion)
+                Debug.Log("Funny that");
+
             sol.AnimationTimer.Stop();
             sol.AnimationTimer.Enabled = false;
         }
