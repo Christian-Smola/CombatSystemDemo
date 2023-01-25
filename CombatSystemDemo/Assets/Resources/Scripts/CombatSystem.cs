@@ -7,6 +7,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 using System.Data;
+using Unity.VisualScripting;
 
 public class CombatSystem : MonoBehaviour
 {
@@ -526,7 +527,9 @@ public class CombatSystem : MonoBehaviour
             {
                 DivisionPlacementBoxCurrentPos = Input.mousePosition;
                 //This needs to be optimized, rn it's having a major effect on our frames
-                UpdateDivisionPlacement();
+
+                if (Vector3.Distance(DivisionPlacementBoxStartPos, DivisionPlacementBoxCurrentPos) >= 100)
+                    UpdateDivisionPlacement();
             }
         }
 
@@ -546,7 +549,7 @@ public class CombatSystem : MonoBehaviour
             Physics.Raycast(CursorRay, out CurrentPosHit, 1200, 1 << 1);
             Physics.Raycast(StartPosRay, out StartPosHit, 1200, 1 << 1);
 
-            if (DivisionPlacementTimer.ElapsedMilliseconds >= 15 && Vector3.Distance(StartPosHit.point, CurrentPosHit.point) >= 5f)
+            if (DivisionPlacementTimer.ElapsedMilliseconds >= 15 && Vector3.Distance(DivisionPlacementBoxStartPos, DivisionPlacementBoxCurrentPos) >= 100)
             {
                 float Angle = NewDivisionAngle() + 90f;
 
@@ -629,66 +632,22 @@ public class CombatSystem : MonoBehaviour
                         foreach (Division div in SelectedDivisions)
                             TotalWidth += div.Width + 0.25f;
 
-                        //start point - (TotalWidth / 2) + (TotalWidth / SelectedDivisons.Count) * x
-                        //if Even +/- (TotalWidth / 2), if odd the same thing except
-                        //Except then you're trying to add floats to vectors again :,P
+                        float AverageAngle = 0f;
 
-                        //What if we define B and C and then use line BC instead of AC or AB
+                        foreach (Division div in SelectedDivisions)
+                            AverageAngle += div.DivisionGO.transform.localEulerAngles.y - (Mathf.Atan2(div.DivisionGO.transform.position.z - hit.point.z, div.DivisionGO.transform.position.x - hit.point.x) * Mathf.Rad2Deg + 90f);
 
-                        for (int x = 0; x < SelectedDivisions.Count; x++)
+                        AverageAngle = AverageAngle / SelectedDivisions.Count;
+
+                        while (AverageAngle > 360 || AverageAngle < 0)
                         {
-
-                            float TempZ = SelectedDivisions[x].DivisionGO.transform.position.z - hit.point.z;
-                            float TempX = SelectedDivisions[x].DivisionGO.transform.position.x - hit.point.x;
-
-                            float angle = (Mathf.Atan2(TempX, TempZ) * 180f / Mathf.PI) + 180f;
-
-                            float AngleChange = SelectedDivisions[x].DivisionGO.transform.localEulerAngles.y - angle;
-
-                            Vector3 B = new Vector3(hit.point.x + (-(TotalWidth / 2) * Mathf.Sin(angle * (Mathf.PI / 180f))), 0f, hit.point.z + (-(TotalWidth / 2) * Mathf.Cos(angle * Mathf.PI / 180f)));
-                            Vector3 C = new Vector3(hit.point.x - (-(TotalWidth / 2) * Mathf.Sin(angle * (Mathf.PI / 180f))), 0f, hit.point.z - (-(TotalWidth / 2) * Mathf.Cos(angle * Mathf.PI / 180f)));
-
-                            Vector3 BC = B - C;
-
-                            GameObject go = new GameObject();
-                            go.transform.position = new Vector3(0f, 0.1f, 0f) + C + (BC * ((float)x / (float)SelectedDivisions.Count));
-                            go.transform.localEulerAngles = new Vector3(0f, angle, 0f);
-
-                            foreach (Soldier child in SelectedDivisions[x].SoldierList)
-                                child.SoldierGO.transform.SetParent(go.transform);
-
-                            string strName = SelectedDivisions[x].DivisionGO.name;
-
-                            Destroy(SelectedDivisions[x].DivisionGO);
-                            go.name = strName;
-                            SelectedDivisions[x].DivisionGO = go;
-
-                            //SetAnimations 
-                            List<Soldier> CombinedSoldierLists = new List<Soldier>();
-
-                            foreach (Division div in SelectedDivisions)
-                                CombinedSoldierLists.AddRange(div.SoldierList);
-
-                            SetAnimations(AnimationType.Idle, CombinedSoldierLists);
-
-                            if (Mathf.Abs(AngleChange) > 140f || Mathf.Abs(AngleChange) < 220f)
-                            {
-                                //AssignSoldierDestinations(SelectedDivisions[x], go, SelectedDivisions[x].formation, true);
-                                //AssignSoldierDestinations2(SelectedDivisions[x], go, SelectedDivisions[x].formation, true);
-                                //PopulateRaycastSoldierList(SelectedDivisions[x], true);
-                            }
-                            else
-                            {
-                                //AssignSoldierDestinations(SelectedDivisions[x], go, SelectedDivisions[x].formation);
-                                //AssignSoldierDestinations2(SelectedDivisions[x], go, SelectedDivisions[x].formation);
-                                //PopulateRaycastSoldierList(SelectedDivisions[x], false);
-                            }
-
-                            SelectedDivisions[x].IsInMotion = true;
-
-                            for (int y = 0; y < SelectedDivisions[x].SoldierList.Count; y++)
-                                SelectedDivisions[x].SoldierList[y].IsInMotion = true;
+                            if (AverageAngle > 360)
+                                AverageAngle -= 360;
+                            else if (AverageAngle < 0)
+                                AverageAngle += 360;
                         }
+
+                        Debug.Log(AverageAngle);
                     }
                 }
             }
