@@ -538,17 +538,6 @@ public class CombatSystem : MonoBehaviour
             if (SelectedDivisions.Count < 1)
                 return;
 
-            //I think the most rational thing to do is to employ a timer
-            //Maybe plus a distance check,
-            Ray CursorRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-            Ray StartPosRay = Camera.main.ScreenPointToRay(DivisionPlacementBoxStartPos);
-
-            RaycastHit CurrentPosHit;
-            RaycastHit StartPosHit;
-
-            Physics.Raycast(CursorRay, out CurrentPosHit, 1200, 1 << 1);
-            Physics.Raycast(StartPosRay, out StartPosHit, 1200, 1 << 1);
-
             if (DivisionPlacementTimer.ElapsedMilliseconds >= 15 && Vector3.Distance(DivisionPlacementBoxStartPos, DivisionPlacementBoxCurrentPos) >= 100)
             {
                 float Angle = NewDivisionAngle() + 90f;
@@ -628,14 +617,13 @@ public class CombatSystem : MonoBehaviour
                     if (hit.transform.tag == "Terrain")
                     {
                         float TotalWidth = 0f;
-
-                        foreach (Division div in SelectedDivisions)
-                            TotalWidth += div.Width + 0.25f;
-
                         float AverageAngle = 0f;
 
                         foreach (Division div in SelectedDivisions)
-                            AverageAngle += div.DivisionGO.transform.localEulerAngles.y - (Mathf.Atan2(div.DivisionGO.transform.position.z - hit.point.z, div.DivisionGO.transform.position.x - hit.point.x) * Mathf.Rad2Deg + 90f);
+                        {
+                            TotalWidth += div.Width + 0.25f;
+                            AverageAngle += div.DivisionGO.transform.localEulerAngles.y - (Mathf.Atan2(div.DivisionGO.transform.position.z - hit.point.z, div.DivisionGO.transform.position.x - hit.point.x) * Mathf.Rad2Deg);
+                        }
 
                         AverageAngle = AverageAngle / SelectedDivisions.Count;
 
@@ -647,7 +635,37 @@ public class CombatSystem : MonoBehaviour
                                 AverageAngle += 360;
                         }
 
-                        Debug.Log(AverageAngle);
+                        Vector3 A = new Vector3(hit.point.x + (-(TotalWidth / 2) * Mathf.Sin(AverageAngle * (Mathf.PI / 180f))), 0f, hit.point.z + (-(TotalWidth / 2) * Mathf.Cos(AverageAngle * Mathf.PI / 180f)));
+                        Vector3 B = new Vector3(hit.point.x - (-(TotalWidth / 2) * Mathf.Sin(AverageAngle * (Mathf.PI / 180f))), 0f, hit.point.z - (-(TotalWidth / 2) * Mathf.Cos(AverageAngle * Mathf.PI / 180f)));
+
+                        Vector3 AB = A - B;
+
+                        for (int x = 0; x < SelectedDivisions.Count; x++)
+                        {
+                            GameObject go = new GameObject();
+                            go.transform.position = new Vector3(0f, 0.1f, 0f) + A + new Vector3(TotalWidth / (SelectedDivisions.Count * 2), 0f, 0f) - (AB * ((float)x / (float)SelectedDivisions.Count));
+                            go.transform.localEulerAngles = new Vector3(0f, SelectedDivisions[x].DivisionGO.transform.eulerAngles.y - AverageAngle + 90f, 0f);
+
+                            foreach (Soldier child in SelectedDivisions[x].SoldierList)
+                                child.SoldierGO.transform.SetParent(go.transform);
+
+                            string strName = SelectedDivisions[x].DivisionGO.name;
+
+                            Destroy(SelectedDivisions[x].DivisionGO);
+                            go.name = strName;
+                            SelectedDivisions[x].DivisionGO = go;
+
+                            SelectedDivisions[x].TempWidth = SelectedDivisions[x].Width;
+
+                            SetAnimations(AnimationType.Walk, SelectedDivisions[x].SoldierList);
+
+                            UpdateSoldierPositionsInFormationNew(SelectedDivisions[x], Direction.Forward);
+
+                            SelectedDivisions[x].IsInMotion = true;
+
+                            foreach (Soldier sol in SelectedDivisions[x].SoldierList)
+                                sol.IsInMotion = true;
+                        }
                     }
                 }
             }
