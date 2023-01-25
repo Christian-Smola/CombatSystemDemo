@@ -219,7 +219,7 @@ public class CombatSystem : MonoBehaviour
 
         int DivisionWidth = 15;
 
-        int NumberOfDivisions = 7;
+        int NumberOfDivisions = 3;
 
         float Offset = 0f;
 
@@ -251,7 +251,7 @@ public class CombatSystem : MonoBehaviour
 
         DivisionWidth = 12;
 
-        NumberOfDivisions = 9;
+        NumberOfDivisions = 5;
 
         if (NumberOfDivisions % 2 == 0)
             Offset = 0.5f;
@@ -345,15 +345,6 @@ public class CombatSystem : MonoBehaviour
                 {
                     Vector3 DivMaxCorner = Camera.main.WorldToScreenPoint(div.Boundaries[0]);
                     Vector3 DivMinCorner = Camera.main.WorldToScreenPoint(div.Boundaries[3]);
-                    //Vector3 DivMaxCorner = Camera.main.WorldToScreenPoint(div.CornerSoldiers[0].SoldierGO.transform.TransformPoint(div.BoundaryOffsets[0]));
-                    //Vector3 DivMinCorner = Camera.main.WorldToScreenPoint(div.CornerSoldiers[3].SoldierGO.transform.TransformPoint(div.BoundaryOffsets[3]));
-
-                    //if ((DivMaxCorner.x > Max.x && DivMinCorner.x > Max.x) || (DivMaxCorner.x < Min.x && DivMinCorner.x < Min.x) || (DivMaxCorner.y > Max.y && DivMinCorner.y > Max.y) || (DivMaxCorner.y < Min.y && DivMinCorner.y < Min.y))
-                    //{
-                    //    Debug.Log("OG Max: " + div.CornerSoldiers[0].SoldierGO.transform.TransformPoint(div.BoundaryOffsets[0]));
-                    //    Debug.Log("OG Min: " + div.CornerSoldiers[3].SoldierGO.transform.TransformPoint(div.BoundaryOffsets[3]));
-                    //    continue;
-                    //}
 
                     //UI element is inside the division's boundaries
                     if (DivMinCorner.x < Min.x && DivMinCorner.y < Min.y && DivMaxCorner.x > Max.x && DivMaxCorner.y > Max.y)
@@ -366,8 +357,6 @@ public class CombatSystem : MonoBehaviour
                     for (int x = 0; x < /*div.BoundaryOffsets.Count*/ div.Boundaries.Count; x++)
                     {
                         Vector3 ScreenPos = Camera.main.WorldToScreenPoint(div.Boundaries[x]);
-                        //Vector3 ScreenPos = Camera.main.WorldToScreenPoint(div.CornerSoldiers[x].SoldierGO.transform.TransformPoint(div.BoundaryOffsets[x]));
-                        //Vector3 ScreenPos = Camera.main.WorldToScreenPoint(div.BoundaryOffsets[x]);
 
                         //Corner is inside UI element
                         if (ScreenPos.x > Min.x && ScreenPos.y > Min.y && ScreenPos.x < Max.x && ScreenPos.y < Max.y)
@@ -381,18 +370,8 @@ public class CombatSystem : MonoBehaviour
                     if (SelectedDivisions.Contains(div))
                         continue;
 
-                    //Don't want to do these until necessary  
-                    //Vector3 DivUpperLeft = Camera.main.WorldToScreenPoint(div.DivisionGO.transform.TransformPoint(div.DivisionBoundaries[1]));
-                    //Vector3 DivLowerRight = Camera.main.WorldToScreenPoint(div.DivisionGO.transform.TransformPoint(div.DivisionBoundaries[2]));
-
-                    //Vector3 DivUpperLeft = Camera.main.WorldToScreenPoint(div.CornerSoldiers[1].SoldierGO.transform.TransformPoint(div.BoundaryOffsets[1]));
-                    //Vector3 DivLowerRight = Camera.main.WorldToScreenPoint(div.CornerSoldiers[2].SoldierGO.transform.TransformPoint(div.BoundaryOffsets[2]));
-
                     Vector3 DivUpperLeft = Camera.main.WorldToScreenPoint(div.Boundaries[1]);
                     Vector3 DivLowerRight = Camera.main.WorldToScreenPoint(div.Boundaries[2]);
-
-                    //Vector3 DivUpperLeft = Camera.main.WorldToScreenPoint(div.DivisionBoundaries[1]);
-                    //Vector3 DivLowerRight = Camera.main.WorldToScreenPoint(div.DivisionBoundaries[2]);
 
                     //Start with lines that should normally be perpendicular 
 
@@ -618,10 +597,12 @@ public class CombatSystem : MonoBehaviour
                     {
                         float TotalWidth = 0f;
                         float AverageAngle = 0f;
+                        Direction dir = Direction.Forward;
 
                         foreach (Division div in SelectedDivisions)
                         {
                             TotalWidth += div.Width + 0.25f;
+                            //Debug.Log((Mathf.Atan2(div.DivisionGO.transform.position.z - hit.point.z, div.DivisionGO.transform.position.x - hit.point.x) * Mathf.Rad2Deg));
                             AverageAngle += div.DivisionGO.transform.localEulerAngles.y - (Mathf.Atan2(div.DivisionGO.transform.position.z - hit.point.z, div.DivisionGO.transform.position.x - hit.point.x) * Mathf.Rad2Deg);
                         }
 
@@ -640,30 +621,86 @@ public class CombatSystem : MonoBehaviour
 
                         Vector3 AB = A - B;
 
-                        for (int x = 0; x < SelectedDivisions.Count; x++)
+                        //This either needs to be moved above AB or below StartPos, for some degree of consistency
+                        switch (AverageAngle)
                         {
-                            GameObject go = new GameObject();
-                            go.transform.position = new Vector3(0f, 0.1f, 0f) + A + new Vector3(TotalWidth / (SelectedDivisions.Count * 2), 0f, 0f) - (AB * ((float)x / (float)SelectedDivisions.Count));
-                            go.transform.localEulerAngles = new Vector3(0f, SelectedDivisions[x].DivisionGO.transform.eulerAngles.y - AverageAngle + 90f, 0f);
+                            case float a when a <= 45f || a >= 315f:
+                                dir = Direction.Left;
+                                AverageAngle = 0f;
+                                break;
+                            case float a when a > 45f && a < 135:
+                                dir = Direction.Forward;
+                                break;
+                            case float a when a >= 135f && a <= 225f:
+                                dir = Direction.Right;
+                                AverageAngle = 180f;
+                                break;
+                            case float a when a > 225f && a < 315f:
+                                dir = Direction.Back;
+                                AverageAngle = 270f;
+                                break;
+                        }
 
-                            foreach (Soldier child in SelectedDivisions[x].SoldierList)
+                        Dictionary<float, Division> DivDistPairs = new Dictionary<float, Division>();
+                        List<Vector3> Destinations = new List<Vector3>();
+
+                        Vector3 StartPos = new Vector3(0f, 0.1f, 0f) + A + new Vector3((TotalWidth / (SelectedDivisions.Count * 2)) * Mathf.Sin(AverageAngle * (Mathf.PI / 180f)), 0f, (TotalWidth / (SelectedDivisions.Count * 2)) * Mathf.Cos(AverageAngle * Mathf.PI / 180f));
+
+                        for (int x = 0; x < SelectedDivisions.Count; x++)
+                            Destinations.Add(StartPos - (AB * ((float)x / (float)SelectedDivisions.Count)));
+
+                        foreach (Division div in SelectedDivisions)
+                        {
+                            float CombinedDist = 0f;
+
+                            for (int i = 0; i < SelectedDivisions.Count; i++)
+                                CombinedDist += Math.Abs(Vector3.Distance(div.DivisionGO.transform.position, Destinations[i]));
+
+                            DivDistPairs.Add(CombinedDist, div); 
+                        }
+
+                        //Debug.DrawLine(A, A + (Vector3.up * 6f), Color.blue, 20);
+                        //Debug.DrawLine(B, B + (Vector3.up * 6f), Color.red, 20);
+
+                        //Assign destinations based on distance, go from furthest to closest
+                        foreach (KeyValuePair<float, Division> Pair in DivDistPairs.OrderByDescending(D => D.Key))
+                        {
+                            float ClosestDist = 1000000000f;
+                            Vector3 ChosenDestination = new Vector3();
+                            
+                            foreach (Vector3 Dest in Destinations)
+                            {
+                                float DistToDestination = Math.Abs(Vector3.Distance(Pair.Value.DivisionGO.transform.position, Dest));
+
+                                if (DistToDestination < ClosestDist)
+                                {
+                                    ClosestDist = DistToDestination;
+                                    ChosenDestination = Dest;
+                                }
+                            }
+
+                            Destinations.Remove(ChosenDestination);
+
+                            GameObject go = new GameObject();
+                            go.transform.position = ChosenDestination;
+                            go.transform.localEulerAngles = new Vector3(0f, Pair.Value.DivisionGO.transform.localEulerAngles.y + (AverageAngle - 90f), 0f);
+
+                            foreach (Soldier child in Pair.Value.SoldierList)
                                 child.SoldierGO.transform.SetParent(go.transform);
 
-                            string strName = SelectedDivisions[x].DivisionGO.name;
+                            string strName = Pair.Value.DivisionGO.name;
 
-                            Destroy(SelectedDivisions[x].DivisionGO);
+                            Destroy(Pair.Value.DivisionGO);
                             go.name = strName;
-                            SelectedDivisions[x].DivisionGO = go;
+                            Pair.Value.DivisionGO = go;
 
-                            SelectedDivisions[x].TempWidth = SelectedDivisions[x].Width;
+                            Pair.Value.TempWidth = Pair.Value.Width;
 
-                            SetAnimations(AnimationType.Walk, SelectedDivisions[x].SoldierList);
+                            UpdateSoldierPositionsInFormationNew(Pair.Value, dir);
 
-                            UpdateSoldierPositionsInFormationNew(SelectedDivisions[x], Direction.Forward);
+                            Pair.Value.IsInMotion = true;
 
-                            SelectedDivisions[x].IsInMotion = true;
-
-                            foreach (Soldier sol in SelectedDivisions[x].SoldierList)
+                            foreach (Soldier sol in Pair.Value.SoldierList)
                                 sol.IsInMotion = true;
                         }
                     }

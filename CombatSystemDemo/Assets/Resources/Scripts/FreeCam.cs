@@ -14,10 +14,11 @@ public class FreeCam : MonoBehaviour
 
         if (Input.GetMouseButton(2))
         {
-            float x = Camera.main.transform.localPosition.x + ((CameraStartPosition.x - Input.mousePosition.x) / 20f);
-            float y = Camera.main.transform.localPosition.y + ((CameraStartPosition.y - Input.mousePosition.y) / 20f);
+            float x = (CameraStartPosition.x - Input.mousePosition.x) / 20f;
+            float y = (CameraStartPosition.y - Input.mousePosition.y) / 20f;
 
-            Camera.main.transform.localPosition = new Vector3(x, y, Camera.main.transform.localPosition.z);
+            Camera.main.transform.localPosition += Camera.main.gameObject.transform.right * x;
+            Camera.main.transform.localPosition += Camera.main.gameObject.transform.up * y;
 
             CameraStartPosition = Input.mousePosition;
         }
