@@ -280,6 +280,8 @@ public class CombatSystem : MonoBehaviour
         ChildThread.Start();
 
         SelectionBox.SetActive(false);
+
+        //SelectAllDivisions();
     }
 
     // Update is called once per frame
@@ -3379,6 +3381,37 @@ public class CombatSystem : MonoBehaviour
         catch (Exception ex)
         {
             Debug.Log(ex.Message);
+        }
+    }
+
+    private void SelectAllDivisions()
+    {
+        foreach (Division div in DivisionList)
+        {
+            foreach (Soldier sol in div.SoldierList)
+            {
+                foreach (Transform child in sol.SoldierGO.transform)
+                {
+                    if (!child.gameObject.active)
+                        continue;
+
+                    if (child.gameObject.name == "Cone")
+                        continue;
+
+                    MeshRenderer renderer = child.gameObject.GetComponent<MeshRenderer>();
+
+                    if (renderer.material.shader.GetPropertyName(9) == "_IsSelected")
+                    {
+                        renderer.material.SetFloat(renderer.material.shader.GetPropertyName(9), 1);
+                        Debug.Log("Something should be happening");
+                    }
+                    else
+                    {
+                        Debug.Log(renderer.material.shader.GetPropertyName(9));
+                        break;
+                    }
+                }
+            }
         }
     }
 

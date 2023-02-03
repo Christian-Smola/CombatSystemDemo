@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Centurion Sword Hit Left_HitLeft.animMap
-  m_Shader: {fileID: 4800000, guid: 98bace6fa2aa825439c9a0452ee4c4da, type: 3}
+  m_Shader: {fileID: 4800000, guid: a17da7c9cbfce0544a11113b5b5b43e3, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -47,6 +47,9 @@ Material:
     m_Floats:
     - Time: 0
     - _AnimLen: 1.4
+    - _IsSelected: 0
     - _IsVisible: 1
-    m_Colors: []
+    - _OutlineWidth: 0.01
+    m_Colors:
+    - _OutlineColor: {r: 1, g: 0.8352941, b: 0, a: 1}
   m_BuildTextureStacks: []
