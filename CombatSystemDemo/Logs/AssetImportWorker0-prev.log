@@ -15,11 +15,11 @@ C:/Users/csmol/Documents/Git Projects/CombatSystemDemo/CombatSystemDemo
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-62484
+55846
 Successfully changed project path to: C:/Users/csmol/Documents/Git Projects/CombatSystemDemo/CombatSystemDemo
 C:/Users/csmol/Documents/Git Projects/CombatSystemDemo/CombatSystemDemo
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 59.79 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 61.34 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.28f1 (f3f9dc10f3dd)
 [Subsystems] Discovering subsystems at path C:/Users/csmol/Documents/Unity/2021.1.28f1/Editor/Data/Resources/UnitySubsystems
@@ -35,37 +35,37 @@ Initialize mono
 Mono path[0] = 'C:/Users/csmol/Documents/Unity/2021.1.28f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Users/csmol/Documents/Unity/2021.1.28f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Users/csmol/Documents/Unity/2021.1.28f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56904
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56732
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Users/csmol/Documents/Unity/2021.1.28f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001324 seconds.
+Registered in 0.001370 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 60.89 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 61.53 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.902 seconds
+- Completed reload, in  0.924 seconds
 Domain Reload Profiling:
-	ReloadAssembly (902ms)
-		BeginReloadAssembly (45ms)
+	ReloadAssembly (924ms)
+		BeginReloadAssembly (46ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (0ms)
-		EndReloadAssembly (342ms)
-			LoadAssemblies (43ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (351ms)
+			LoadAssemblies (45ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (104ms)
+			SetupTypeCache (108ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (22ms)
-			SetupLoadedEditorAssemblies (181ms)
+			RebuildScriptCaches (25ms)
+			SetupLoadedEditorAssemblies (179ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
+				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (61ms)
+				RefreshPlugins (62ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (93ms)
+				ProcessInitializeOnLoadAttributes (90ms)
 				ProcessInitializeOnLoadMethodAttributes (21ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
@@ -73,36 +73,36 @@ Domain Reload Profiling:
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.004438 seconds.
+Registered in 0.004537 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.81 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.751 seconds
+- Completed reload, in  0.814 seconds
 Domain Reload Profiling:
-	ReloadAssembly (751ms)
-		BeginReloadAssembly (105ms)
+	ReloadAssembly (815ms)
+		BeginReloadAssembly (111ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (18ms)
-		EndReloadAssembly (605ms)
-			LoadAssemblies (65ms)
+		EndReloadAssembly (659ms)
+			LoadAssemblies (67ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (218ms)
+			SetupTypeCache (227ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (37ms)
-			SetupLoadedEditorAssemblies (230ms)
+			RebuildScriptCaches (38ms)
+			SetupLoadedEditorAssemblies (261ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (52ms)
-				ProcessInitializeOnLoadAttributes (162ms)
+				BeforeProcessingInitializeOnLoad (62ms)
+				ProcessInitializeOnLoadAttributes (181ms)
 				ProcessInitializeOnLoadMethodAttributes (7ms)
 				AfterProcessingInitializeOnLoad (5ms)
 				EditorAssembliesLoaded (0ms)
@@ -115,11 +115,11 @@ Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 second
 Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3049 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 130.5 MB.
-System memory in use after: 130.7 MB.
+System memory in use before: 130.6 MB.
+System memory in use after: 130.8 MB.
 
 Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 3514.
-Total: 2.608100 ms (FindLiveObjects: 0.243100 ms CreateObjectMapping: 0.077800 ms MarkObjects: 2.214700 ms  DeleteObjects: 0.071900 ms)
+Total: 2.875100 ms (FindLiveObjects: 0.279900 ms CreateObjectMapping: 0.137500 ms MarkObjects: 2.379400 ms  DeleteObjects: 0.077500 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -133,193 +133,1127 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Resources/Updated Units/Legionary Spear.prefab
-  artifactKey: Guid(a13f934f0ce95764984348d8618f3702) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Updated Units/Legionary Spear.prefab using Guid(a13f934f0ce95764984348d8618f3702) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8e202ddbc7c9f4e2751c0e742802e63') in 0.047914 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000115 seconds.
-  path: Assets/Resources/Updated Units/Legionary Sword.prefab
-  artifactKey: Guid(782cf1fd5e7471643b50fa79c301d970) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Updated Units/Legionary Sword.prefab using Guid(782cf1fd5e7471643b50fa79c301d970) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8b3f3b43b365fa1962f547ecb2d4495') in 0.027468 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000115 seconds.
-  path: Assets/Resources/Updated Units/Celt Axe.prefab
-  artifactKey: Guid(1165c98904fd045448feba73a6ac1f7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Updated Units/Celt Axe.prefab using Guid(1165c98904fd045448feba73a6ac1f7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc04dad71a4734fadec3747ed903fa33') in 0.007618 seconds 
+  path: Assets/Resources/Imported Folders/Septimus Export Folder/Textures/septimus_normal.tga
+  artifactKey: Guid(23a5b95c74e62d743a13945033156176) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Septimus Export Folder/Textures/septimus_normal.tga using Guid(23a5b95c74e62d743a13945033156176) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce4e2b0d0329211f14418f2955ca32fa') in 0.080333 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000121 seconds.
-  path: Assets/Resources/Updated Units/Centurion Spear.prefab
-  artifactKey: Guid(f526b84188b89dd47a554be1094a19ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Updated Units/Centurion Spear.prefab using Guid(f526b84188b89dd47a554be1094a19ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e795060484f452e1d8404584eb6394c') in 0.026055 seconds 
+  path: Assets/Resources/Imported Folders/Septimus Export Folder/Textures/septimus_ao.tga
+  artifactKey: Guid(ac07685a88cbbdb4ea2bf4c5095290de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Septimus Export Folder/Textures/septimus_ao.tga using Guid(ac07685a88cbbdb4ea2bf4c5095290de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62446a93626c8caa0bd89431f2f2b374') in 0.011210 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000106 seconds.
-  path: Assets/Resources/Updated Units/Centurion Sword.prefab
-  artifactKey: Guid(9f271eb1d2cbd344b8391b2b7ead4085) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Updated Units/Centurion Sword.prefab using Guid(9f271eb1d2cbd344b8391b2b7ead4085) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '561a4f211cb22fe1628a39aea313419b') in 0.023117 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000110 seconds.
-  path: Assets/Resources/Updated Units/Celt Sword.prefab
-  artifactKey: Guid(8b836564c94d5234f813200540c94d2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Updated Units/Celt Sword.prefab using Guid(8b836564c94d5234f813200540c94d2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4db504cbb98da14eb866d3a4666a185c') in 0.017464 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 10.269828 seconds.
-  path: Assets/Resources/Imported Folders/Celt Export Folder/Textures/Greid_Green_Shield_Blue_Pants_TatB_albedo.png
-  artifactKey: Guid(2f8214e2056bed547bcdd67f9b601949) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Imported Folders/Celt Export Folder/Textures/Greid_Green_Shield_Blue_Pants_TatB_albedo.png using Guid(2f8214e2056bed547bcdd67f9b601949) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c687a33c47ac168d0822e7e0b7d3c0b2') in 0.090195 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000122 seconds.
-  path: Assets/Resources/Imported Folders/Celt Export Folder/Textures/Greid_ao.tga
-  artifactKey: Guid(7f84c1a0ad3c4ce488eca9895fa116d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Imported Folders/Celt Export Folder/Textures/Greid_ao.tga using Guid(7f84c1a0ad3c4ce488eca9895fa116d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ee09626f203ce1f3020dc996c2f0f9f') in 0.044581 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000112 seconds.
-  path: Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Axe/Attack Cut/Celt_Axe_Attack_Cut.animMap.asset
-  artifactKey: Guid(98a775fe8a593514b934bf53d4e2be7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Axe/Attack Cut/Celt_Axe_Attack_Cut.animMap.asset using Guid(98a775fe8a593514b934bf53d4e2be7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4734c6cb51ac7ce2283f77911de21d72') in 0.045887 seconds 
+  Time since last request: 0.000130 seconds.
+  path: Assets/Resources/Imported Folders/Septimus Export Folder/Textures/septimus_emission.tga
+  artifactKey: Guid(b7b5fbdcc1d928a4191a32b0cc7731d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Septimus Export Folder/Textures/septimus_emission.tga using Guid(b7b5fbdcc1d928a4191a32b0cc7731d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23f121c9624f13bc922e95df8fa24d61') in 0.008431 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000119 seconds.
-  path: Assets/Resources/Imported Folders/Celt Export Folder/Textures/Greid_metallic_gloss.tga
-  artifactKey: Guid(f23fbbf10b2f38a4fa7e21bba7f0b6dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Imported Folders/Celt Export Folder/Textures/Greid_metallic_gloss.tga using Guid(f23fbbf10b2f38a4fa7e21bba7f0b6dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62106f97fa01d7fb21fed0bb16618a33') in 0.048816 seconds 
+  path: Assets/Resources/Imported Folders/Septimus Export Folder/Textures/septimus_albedo.tga
+  artifactKey: Guid(2385b4e201c57cc4e87b2bd563ec11b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Septimus Export Folder/Textures/septimus_albedo.tga using Guid(2385b4e201c57cc4e87b2bd563ec11b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e46dd4341b1cfe88dd03b0ae2c995b4d') in 0.010140 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000127 seconds.
-  path: Assets/Resources/Imported Folders/Celt Export Folder/Textures/Greid_normal.tga
-  artifactKey: Guid(8588acd09e2e52a4f8f6c923ce256486) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Imported Folders/Celt Export Folder/Textures/Greid_normal.tga using Guid(8588acd09e2e52a4f8f6c923ce256486) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35ec1e41d34ede8e65b3b009045d9e90') in 0.076591 seconds 
+  Time since last request: 0.000128 seconds.
+  path: Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Centurion Spear/Attack Ready/Centurion_Spear_attack_ready_1.animMap.asset
+  artifactKey: Guid(117c33df3fe33884db2d5b71400c324a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Centurion Spear/Attack Ready/Centurion_Spear_attack_ready_1.animMap.asset using Guid(117c33df3fe33884db2d5b71400c324a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '870910bda07b4cf49b2bf3db798b37e8') in 0.042780 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 26.968552 seconds.
-  path: Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Axe/Attack Thrust/Celt_Axe_Attack_Thrust.animMap.asset
-  artifactKey: Guid(ae6a036c51eec7745859784187036a49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Axe/Attack Thrust/Celt_Axe_Attack_Thrust.animMap.asset using Guid(ae6a036c51eec7745859784187036a49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13be36f7d2da0400b035520d69e7c5e3') in 0.022685 seconds 
+  Time since last request: 0.000124 seconds.
+  path: Assets/Resources/Imported Folders/Septimus Export Folder/Textures/septimus_metallic.tga
+  artifactKey: Guid(9f4a3e8d02057f2408bb9a1e92ba43d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Septimus Export Folder/Textures/septimus_metallic.tga using Guid(9f4a3e8d02057f2408bb9a1e92ba43d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '535429f5fd31a75c4752f97be51d9de3') in 0.010561 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 12.199512 seconds.
-  path: Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Axe/Attack Combo/Celt_Axe_Attack_Combo.animMap.asset
-  artifactKey: Guid(f687566c6efb6ef44acf3f24e5350189) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Axe/Attack Combo/Celt_Axe_Attack_Combo.animMap.asset using Guid(f687566c6efb6ef44acf3f24e5350189) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a42a81e4912e4c34908be3f4e822df8e') in 0.043479 seconds 
+  Time since last request: 11.132667 seconds.
+  path: Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Centurion Spear/Walk/Centurion Spear Walk_walk_equipped.animMap.asset
+  artifactKey: Guid(dbd17a61042331c489cb0991d91dd36f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Centurion Spear/Walk/Centurion Spear Walk_walk_equipped.animMap.asset using Guid(dbd17a61042331c489cb0991d91dd36f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd33507d31f8c461c291567a49681a6d5') in 0.023347 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 14.270794 seconds.
-  path: Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Axe/Idle Battle/Celt_Axe_Idle_Battle.animMap.asset
-  artifactKey: Guid(094b275c7a85d1c4491bf7a11c7b40bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Axe/Idle Battle/Celt_Axe_Idle_Battle.animMap.asset using Guid(094b275c7a85d1c4491bf7a11c7b40bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdf81da15664e392520dbb5172119196') in 0.075248 seconds 
+  Time since last request: 11.616292 seconds.
+  path: Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Centurion Spear/Idle/Centurion_Spear Idle_idle.animMap.asset
+  artifactKey: Guid(81c35979c1994f94285ce5bcf8e8b880) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Centurion Spear/Idle/Centurion_Spear Idle_idle.animMap.asset using Guid(81c35979c1994f94285ce5bcf8e8b880) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e08f923b80e13835e512d5070806779a') in 0.083759 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 28.578593 seconds.
-  path: Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Axe/Lean Back/Celt_Axe_Lean_Back.animMap.asset
-  artifactKey: Guid(3b2410db56d73c148aef753fd3c2831b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Axe/Lean Back/Celt_Axe_Lean_Back.animMap.asset using Guid(3b2410db56d73c148aef753fd3c2831b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ceccbe3b478eeb6a5a33d7c0b90ba6f') in 0.024560 seconds 
+  Time since last request: 11.614096 seconds.
+  path: Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Centurion Spear/Attack Thrust/Centurion_Spear Attack Thrust_attack_thrust_2.animMap.asset
+  artifactKey: Guid(238e66d3f611ae64c88feac78b40d193) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Centurion Spear/Attack Thrust/Centurion_Spear Attack Thrust_attack_thrust_2.animMap.asset using Guid(238e66d3f611ae64c88feac78b40d193) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05c249c46fe3903124644a5eb932531d') in 0.024516 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 76.734038 seconds.
-  path: Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Axe/Walk Attack/Celt_Axe_Walk_Attack.animMap.asset
-  artifactKey: Guid(12869ed9e09c9344ebd78b53140b9df3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Axe/Walk Attack/Celt_Axe_Walk_Attack.animMap.asset using Guid(12869ed9e09c9344ebd78b53140b9df3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa332e2d0e67287d76424e2a809e8875') in 0.025514 seconds 
+  Time since last request: 16.921013 seconds.
+  path: Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Centurion Spear/Hit Right/Centurion Spear Hit Right_hit_right.animMap.asset
+  artifactKey: Guid(97af455e1835d9448b375177942ef04c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Centurion Spear/Hit Right/Centurion Spear Hit Right_hit_right.animMap.asset using Guid(97af455e1835d9448b375177942ef04c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3633186cee61ade494498bd79795c415') in 0.037541 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 17.833001 seconds.
-  path: Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Axe/Block Shield/Celt_Axe_Block_Test_Block_Shield.animMap.asset
-  artifactKey: Guid(fa8714885786c004290b757810b4e4cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Axe/Block Shield/Celt_Axe_Block_Test_Block_Shield.animMap.asset using Guid(fa8714885786c004290b757810b4e4cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7aa0c57f62d0d6a29df59407465c851') in 0.041817 seconds 
+  Time since last request: 11.758476 seconds.
+  path: Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Centurion Spear/Hit Left/Centurion Spear Hit Left_HitLeft.animMap.asset
+  artifactKey: Guid(9cafcd889bef4ef43a9a1cff7113b90d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Centurion Spear/Hit Left/Centurion Spear Hit Left_HitLeft.animMap.asset using Guid(9cafcd889bef4ef43a9a1cff7113b90d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b1b348b3273a7d03aade5f3e34be2d2') in 0.043510 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 14.564068 seconds.
-  path: Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Axe/Idle Battle Simple/Celt_Axe_Idle_Battle_Simple_Idle_Battle_Simple.animMap.asset
-  artifactKey: Guid(224a8ccf5ea0a9f4c85c3f3e87e8c82a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Axe/Idle Battle Simple/Celt_Axe_Idle_Battle_Simple_Idle_Battle_Simple.animMap.asset using Guid(224a8ccf5ea0a9f4c85c3f3e87e8c82a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60a2cccb69e4a6d618a5d8aa2a8b7317') in 0.072598 seconds 
+  Time since last request: 17.134319 seconds.
+  path: Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Centurion Spear/Fall Forward/Centurion Spear Fall Forward_FallForward.animMap.asset
+  artifactKey: Guid(51649339cdd100d4bacc3677ff494ad3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Centurion Spear/Fall Forward/Centurion Spear Fall Forward_FallForward.animMap.asset using Guid(51649339cdd100d4bacc3677ff494ad3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f671017089788a6399421ab0956daf5') in 0.069405 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 26.885386 seconds.
-  path: Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Axe/Fall Back/Celt_Axe_Fall_Back_Fall_Back.animMap.asset
-  artifactKey: Guid(826f039796c8b65439863dfb43aab51e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Axe/Fall Back/Celt_Axe_Fall_Back_Fall_Back.animMap.asset using Guid(826f039796c8b65439863dfb43aab51e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7782e2e64f61e45db96166c7113130b4') in 0.041230 seconds 
+  Time since last request: 21.505024 seconds.
+  path: Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Centurion Sword/Attack Ready/Centurion_Sword Combat_attack_ready_1.animMap.asset
+  artifactKey: Guid(06ad68baadd4eb04cbc1e25744eec7ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Centurion Sword/Attack Ready/Centurion_Sword Combat_attack_ready_1.animMap.asset using Guid(06ad68baadd4eb04cbc1e25744eec7ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef6747ef33d2ee82b82489d2def8ef6f') in 0.043240 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 23.478140 seconds.
-  path: Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Axe/Hit Left/Celt_Axe_Hit_Left.animMap.asset
-  artifactKey: Guid(0864cfc40f5768143a63feda9e59c5f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Axe/Hit Left/Celt_Axe_Hit_Left.animMap.asset using Guid(0864cfc40f5768143a63feda9e59c5f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e277efdc15cf989003f7a807b6f8d7fc') in 0.041224 seconds 
+  Time since last request: 14.631336 seconds.
+  path: Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Centurion Sword/Combat Idle/Centurion_Sword Combat_attack_ready.animMap.asset
+  artifactKey: Guid(8454abc464566114abd710949478ee6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Centurion Sword/Combat Idle/Centurion_Sword Combat_attack_ready.animMap.asset using Guid(8454abc464566114abd710949478ee6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b99ed42d5f338c4ff34492d647fb4ca') in 0.039910 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 12.878437 seconds.
-  path: Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Axe/Hit Right/Celt_Axe_Hit_Right.animMap.asset
-  artifactKey: Guid(8b26b236bc6d02e49b2aafc0c112cd20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Axe/Hit Right/Celt_Axe_Hit_Right.animMap.asset using Guid(8b26b236bc6d02e49b2aafc0c112cd20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94c004d42c8535f901bed8ebd4b97a0e') in 0.042325 seconds 
+  Time since last request: 11.151099 seconds.
+  path: Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Centurion Sword/Block/Centurion_Sword Combat_block_shield.animMap.asset
+  artifactKey: Guid(e12fb4592ff974a438a08ef3e618a3b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Centurion Sword/Block/Centurion_Sword Combat_block_shield.animMap.asset using Guid(e12fb4592ff974a438a08ef3e618a3b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73d202af75c9d672ac2e5928ef0d2ce8') in 0.042094 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 37.494078 seconds.
-  path: Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Sword/Attack Combo/Celt_Sword_Attack_Combo.animMap.asset
-  artifactKey: Guid(d7e501069830b4e4dac5a9b5fb9cfda2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Sword/Attack Combo/Celt_Sword_Attack_Combo.animMap.asset using Guid(d7e501069830b4e4dac5a9b5fb9cfda2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c58de491618d2fcf56ec0e4c2f2979a') in 0.039312 seconds 
+  Time since last request: 13.302004 seconds.
+  path: Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Centurion Sword/Attack Thrust/Centurion_Sword Combat_attack_thrust_2.animMap.asset
+  artifactKey: Guid(3a81e7f94a5b39c4db49ba3de66f819f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Centurion Sword/Attack Thrust/Centurion_Sword Combat_attack_thrust_2.animMap.asset using Guid(3a81e7f94a5b39c4db49ba3de66f819f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77260aeff352b3a84c26e6983b29f698') in 0.024551 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 14.464141 seconds.
-  path: Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Sword/Attack Cut/Celt_Sword_Attack_Cut.animMap.asset
-  artifactKey: Guid(f8d21c220be8c204db0543380dc11ca8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Sword/Attack Cut/Celt_Sword_Attack_Cut.animMap.asset using Guid(f8d21c220be8c204db0543380dc11ca8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b713c80f4229b71a4266213ad68cb72') in 0.040348 seconds 
+  Time since last request: 14.453233 seconds.
+  path: Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Centurion Sword/Fall Forward/Centurion Sword Fall Forward_FallForward.animMap.asset
+  artifactKey: Guid(1b696fc8b3cf9404390c7677bbcf3dc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Centurion Sword/Fall Forward/Centurion Sword Fall Forward_FallForward.animMap.asset using Guid(1b696fc8b3cf9404390c7677bbcf3dc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fe08d9a3879db96f1e300062b16c9ce') in 0.068034 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 133.271339 seconds.
-  path: Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Sword/Attack Thrust/Celt_Sword_Attack_Thrust.animMap.asset
-  artifactKey: Guid(b9f3b80bc84042a4ba4ef7abff45cc93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Sword/Attack Thrust/Celt_Sword_Attack_Thrust.animMap.asset using Guid(b9f3b80bc84042a4ba4ef7abff45cc93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ef858b1146066464d809306d64f780b') in 0.022945 seconds 
+  Time since last request: 34.072105 seconds.
+  path: Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Centurion Sword/Hit Left/Centurion Sword Hit Left_HitLeft.animMap.asset
+  artifactKey: Guid(03a1a1d1c01f18847af6ae07661a800b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Centurion Sword/Hit Left/Centurion Sword Hit Left_HitLeft.animMap.asset using Guid(03a1a1d1c01f18847af6ae07661a800b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1729e9ea539a3f41f027b76709507255') in 0.039514 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 11.797039 seconds.
-  path: Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Sword/Idle Battle/Celt_Sword_Idle_Battle.animMap.asset
-  artifactKey: Guid(a0bad96d1016f7449892eebe4489fdf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Sword/Idle Battle/Celt_Sword_Idle_Battle.animMap.asset using Guid(a0bad96d1016f7449892eebe4489fdf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd90f4dfb3f0ed6db9ca53c29a000d40d') in 0.073553 seconds 
+  Time since last request: 12.286504 seconds.
+  path: Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Centurion Sword/Hit Right/Centurion Sword Hit Right_hit_right.animMap.asset
+  artifactKey: Guid(2addceb4bd64f444dbc28e54463f8cb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Centurion Sword/Hit Right/Centurion Sword Hit Right_hit_right.animMap.asset using Guid(2addceb4bd64f444dbc28e54463f8cb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50db24f98328ab6092fb14abc16eb3ac') in 0.038073 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 10.943423 seconds.
-  path: Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Sword/Lean Back/Celt_Sword_Lean_Back.animMap.asset
-  artifactKey: Guid(c49e028506d5c2d4e95fe3046fc65ce6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Sword/Lean Back/Celt_Sword_Lean_Back.animMap.asset using Guid(c49e028506d5c2d4e95fe3046fc65ce6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d0dc04b7b64dd6f6112c8855dc08fc4') in 0.025627 seconds 
+  Time since last request: 32.485974 seconds.
+  path: Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Legionary Spear/Hit Right/Legionary Spear Hit Right_hit_right.animMap.asset
+  artifactKey: Guid(32ff5be1b4f8cbe4a971249b08bdf424) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Legionary Spear/Hit Right/Legionary Spear Hit Right_hit_right.animMap.asset using Guid(32ff5be1b4f8cbe4a971249b08bdf424) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a7243d2580499247f5cd4847772fda2') in 0.037409 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 20.175207 seconds.
-  path: Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Sword/Walk Attack/Celt_Sword_Walk_Attack.animMap.asset
-  artifactKey: Guid(31ee917ba7eddfa4fa68536a6cfd762d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Sword/Walk Attack/Celt_Sword_Walk_Attack.animMap.asset using Guid(31ee917ba7eddfa4fa68536a6cfd762d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62c3b1fda005c40186db70a7f21ca5b4') in 0.023276 seconds 
+  Time since last request: 10.330585 seconds.
+  path: Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Legionary Spear/Hit Left/Legionary Spear Hit Left_HitLeft.animMap.asset
+  artifactKey: Guid(20108c103ff42894aad9705148a31340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Legionary Spear/Hit Left/Legionary Spear Hit Left_HitLeft.animMap.asset using Guid(20108c103ff42894aad9705148a31340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25b3f7ed0e7e36998e25570aa0d1050c') in 0.037347 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 13.229185 seconds.
-  path: Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Sword/Block Shield/Celt_Sword_Block_Block_Shield.animMap.asset
-  artifactKey: Guid(60a08f7e4cd4a7c43a677a9e608b4812) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Sword/Block Shield/Celt_Sword_Block_Block_Shield.animMap.asset using Guid(60a08f7e4cd4a7c43a677a9e608b4812) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc6e42adbda66a75d0b2e5cb8f714151') in 0.039733 seconds 
+  Time since last request: 11.078522 seconds.
+  path: Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Legionary Spear/Fall Forward/Legionary Spear Fall Forward_FallForward.animMap.asset
+  artifactKey: Guid(09449d87e3b3ab340bb901f684122ca5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Legionary Spear/Fall Forward/Legionary Spear Fall Forward_FallForward.animMap.asset using Guid(09449d87e3b3ab340bb901f684122ca5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eba00fe08edae9e7d55e071e39135c36') in 0.070426 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 11.806449 seconds.
-  path: Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Sword/Idle Battle Simple/Celt_Sword_Idle_Battle_Simple_Idle_Battle_Simple.animMap.asset
-  artifactKey: Guid(385df894afd7c3845820387c9f8dc26d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Sword/Idle Battle Simple/Celt_Sword_Idle_Battle_Simple_Idle_Battle_Simple.animMap.asset using Guid(385df894afd7c3845820387c9f8dc26d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1ac5150d236f0ed1d6a1c7a3a267e3b') in 0.071015 seconds 
+  Time since last request: 18.917479 seconds.
+  path: Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Legionary Sword/Attack Ready/Legionary_Sword Combat_attack_ready_1.animMap.asset
+  artifactKey: Guid(cee431d58d2d6a741a1f277138a3424e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Legionary Sword/Attack Ready/Legionary_Sword Combat_attack_ready_1.animMap.asset using Guid(cee431d58d2d6a741a1f277138a3424e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fd75e4a6deef52cb304e29ad8f7fa18') in 0.037606 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 11.398650 seconds.
-  path: Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Sword/Hit Right/Celt_Sword_Hit_Right.animMap.asset
-  artifactKey: Guid(ba4df467451fdac44bc3fa81c253c944) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Sword/Hit Right/Celt_Sword_Hit_Right.animMap.asset using Guid(ba4df467451fdac44bc3fa81c253c944) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0f7d0b309bfe33e538ec2e6ff0d74f0') in 0.044524 seconds 
+  Time since last request: 14.280599 seconds.
+  path: Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Legionary Sword/Combat Idle/Legionary_Sword Combat_attack_ready.animMap.asset
+  artifactKey: Guid(2586a073525d8914482e06986aca91d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Legionary Sword/Combat Idle/Legionary_Sword Combat_attack_ready.animMap.asset using Guid(2586a073525d8914482e06986aca91d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e27b03b14d0ade499130bcfb8ea252db') in 0.041368 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 13.233433 seconds.
-  path: Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Sword/Hit Left/Celt_Sword_Hit_Left.animMap.asset
-  artifactKey: Guid(7e938c6187e2bda4fa2878e0d6d2de73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Sword/Hit Left/Celt_Sword_Hit_Left.animMap.asset using Guid(7e938c6187e2bda4fa2878e0d6d2de73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0f0c6aba42d44e717f9d205081efdca') in 0.041871 seconds 
+  Time since last request: 14.520408 seconds.
+  path: Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Legionary Sword/Block/Legionary_Sword Combat_block_shield.animMap.asset
+  artifactKey: Guid(ee9ef20aac2308c408ca207439dd4291) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Legionary Sword/Block/Legionary_Sword Combat_block_shield.animMap.asset using Guid(ee9ef20aac2308c408ca207439dd4291) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4cf23ae0e7f1d8031c83dcd7db36c88') in 0.037274 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 24.392145 seconds.
-  path: Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Sword/Fall Back/Celt_Sword_Fall_Back_Fall_Back.animMap.asset
-  artifactKey: Guid(596ef51aa39bf5b40b424f0bbfdac45d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Imported Folders/Celt Export Folder/Anim Maps and Materials/Celt Sword/Fall Back/Celt_Sword_Fall_Back_Fall_Back.animMap.asset using Guid(596ef51aa39bf5b40b424f0bbfdac45d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dae6f5f76428b0693fde72da8291a48b') in 0.039806 seconds 
+  Time since last request: 12.038474 seconds.
+  path: Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Legionary Sword/Attack Thrust/Legionary_Sword Combat_attack_thrust_2.animMap.asset
+  artifactKey: Guid(350947e30b87dc546b0db6387f6d37cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Legionary Sword/Attack Thrust/Legionary_Sword Combat_attack_thrust_2.animMap.asset using Guid(350947e30b87dc546b0db6387f6d37cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4d5eda84864ce520175b8b80aea0d53') in 0.024387 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.400237 seconds.
+  path: Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Legionary Sword/Hit Right/Legionary Sword Hit Right_hit_right.animMap.asset
+  artifactKey: Guid(b3fb3d50ee1b5cd4cba99cedaadf99f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Legionary Sword/Hit Right/Legionary Sword Hit Right_hit_right.animMap.asset using Guid(b3fb3d50ee1b5cd4cba99cedaadf99f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '888b94274836c25e45bcc217e732c76d') in 0.037792 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.624020 seconds.
+  path: Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Legionary Sword/Hit Left/Legionary Sword Hit Left_HitLeft.animMap.asset
+  artifactKey: Guid(daae8f99e5a31184eaa44fe74928c2d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Legionary Sword/Hit Left/Legionary Sword Hit Left_HitLeft.animMap.asset using Guid(daae8f99e5a31184eaa44fe74928c2d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b388d01f4da5f3fd537edfa80b1f15be') in 0.037697 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.986301 seconds.
+  path: Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Legionary Sword/Fall Forward/Legionary Sword Fall Forward_FallForward.animMap.asset
+  artifactKey: Guid(7086cd420a6904547a43432657d92468) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Legionary Sword/Fall Forward/Legionary Sword Fall Forward_FallForward.animMap.asset using Guid(7086cd420a6904547a43432657d92468) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7100855764b1a9f8edbd4cb29ca12d3b') in 0.069152 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003949 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.570 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1571ms)
+		BeginReloadAssembly (92ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (3ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (32ms)
+		EndReloadAssembly (1439ms)
+			LoadAssemblies (63ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (208ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (30ms)
+			SetupLoadedEditorAssemblies (205ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (40ms)
+				ProcessInitializeOnLoadAttributes (149ms)
+				ProcessInitializeOnLoadMethodAttributes (6ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.67 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3069 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 275.1 MB.
+System memory in use after: 275.3 MB.
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 3957.
+Total: 2.951900 ms (FindLiveObjects: 0.287500 ms CreateObjectMapping: 0.116800 ms MarkObjects: 2.532000 ms  DeleteObjects: 0.014900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 23.983004 seconds.
+  path: Assets/Resources/Scripts/CombatSystem.cs
+  artifactKey: Guid(d707ce9d34c2e654aaedfe15521cc2cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Scripts/CombatSystem.cs using Guid(d707ce9d34c2e654aaedfe15521cc2cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28794caefe377c919f3b0f02c02cae6c') in 0.013838 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004183 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.745 seconds
+Domain Reload Profiling:
+	ReloadAssembly (746ms)
+		BeginReloadAssembly (107ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (37ms)
+		EndReloadAssembly (597ms)
+			LoadAssemblies (67ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (216ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (30ms)
+			SetupLoadedEditorAssemblies (221ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (43ms)
+				ProcessInitializeOnLoadAttributes (160ms)
+				ProcessInitializeOnLoadMethodAttributes (8ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3040 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 274.6 MB.
+System memory in use after: 274.9 MB.
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 3959.
+Total: 2.958200 ms (FindLiveObjects: 0.277700 ms CreateObjectMapping: 0.127500 ms MarkObjects: 2.537800 ms  DeleteObjects: 0.014600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004580 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.77 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.818 seconds
+Domain Reload Profiling:
+	ReloadAssembly (818ms)
+		BeginReloadAssembly (112ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (37ms)
+		EndReloadAssembly (656ms)
+			LoadAssemblies (69ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (241ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (42ms)
+			SetupLoadedEditorAssemblies (231ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (45ms)
+				ProcessInitializeOnLoadAttributes (169ms)
+				ProcessInitializeOnLoadMethodAttributes (7ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.78 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3040 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 274.6 MB.
+System memory in use after: 274.9 MB.
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 3961.
+Total: 3.726600 ms (FindLiveObjects: 0.366400 ms CreateObjectMapping: 0.183200 ms MarkObjects: 3.158400 ms  DeleteObjects: 0.017900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004546 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.75 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.853 seconds
+Domain Reload Profiling:
+	ReloadAssembly (854ms)
+		BeginReloadAssembly (109ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (38ms)
+		EndReloadAssembly (699ms)
+			LoadAssemblies (70ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (273ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (37ms)
+			SetupLoadedEditorAssemblies (238ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (47ms)
+				ProcessInitializeOnLoadAttributes (173ms)
+				ProcessInitializeOnLoadMethodAttributes (7ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.70 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3040 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 274.7 MB.
+System memory in use after: 274.9 MB.
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 3963.
+Total: 3.324700 ms (FindLiveObjects: 0.444900 ms CreateObjectMapping: 0.097200 ms MarkObjects: 2.764500 ms  DeleteObjects: 0.017200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005758 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.70 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.748 seconds
+Domain Reload Profiling:
+	ReloadAssembly (748ms)
+		BeginReloadAssembly (104ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (29ms)
+		EndReloadAssembly (602ms)
+			LoadAssemblies (64ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (214ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (37ms)
+			SetupLoadedEditorAssemblies (213ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (44ms)
+				ProcessInitializeOnLoadAttributes (153ms)
+				ProcessInitializeOnLoadMethodAttributes (6ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.67 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3040 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 274.7 MB.
+System memory in use after: 275.0 MB.
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 3965.
+Total: 2.621200 ms (FindLiveObjects: 0.239000 ms CreateObjectMapping: 0.075800 ms MarkObjects: 2.290500 ms  DeleteObjects: 0.015100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004256 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.70 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.744 seconds
+Domain Reload Profiling:
+	ReloadAssembly (744ms)
+		BeginReloadAssembly (97ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (30ms)
+		EndReloadAssembly (607ms)
+			LoadAssemblies (64ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (229ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (31ms)
+			SetupLoadedEditorAssemblies (219ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (44ms)
+				ProcessInitializeOnLoadAttributes (159ms)
+				ProcessInitializeOnLoadMethodAttributes (6ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.67 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3040 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 274.7 MB.
+System memory in use after: 275.0 MB.
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 3967.
+Total: 3.178500 ms (FindLiveObjects: 0.284100 ms CreateObjectMapping: 0.132000 ms MarkObjects: 2.746400 ms  DeleteObjects: 0.015200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 519.538246 seconds.
+  path: Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Legionary Sword/Idle/Legionary_Sword Idle_idle.animMap.asset
+  artifactKey: Guid(db296b7fa8aa9ca42b4395691ff41c2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Septimus Export Folder/Anim Maps and Materials/Legionary Sword/Idle/Legionary_Sword Idle_idle.animMap.asset using Guid(db296b7fa8aa9ca42b4395691ff41c2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c1f97dff826eeab923b488e60819c22') in 0.105096 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.354434 seconds.
+  path: Assets/Resources/Imported Folders/Celt Export Folder/Textures/Greid_Red_Shield_Blue_Pants_TatB_albedo.tga
+  artifactKey: Guid(5da51f88f3317c142b8a61b44bbd18c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Celt Export Folder/Textures/Greid_Red_Shield_Blue_Pants_TatB_albedo.tga using Guid(5da51f88f3317c142b8a61b44bbd18c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '985ae99cc3452c6835ecca4007769064') in 0.113152 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004418 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.814 seconds
+Domain Reload Profiling:
+	ReloadAssembly (815ms)
+		BeginReloadAssembly (99ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (34ms)
+		EndReloadAssembly (673ms)
+			LoadAssemblies (67ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (210ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (31ms)
+			SetupLoadedEditorAssemblies (210ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (42ms)
+				ProcessInitializeOnLoadAttributes (152ms)
+				ProcessInitializeOnLoadMethodAttributes (7ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.67 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3042 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 331.6 MB.
+System memory in use after: 331.8 MB.
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 3999.
+Total: 2.993700 ms (FindLiveObjects: 0.287200 ms CreateObjectMapping: 0.141800 ms MarkObjects: 2.548700 ms  DeleteObjects: 0.015200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004156 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.70 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.727 seconds
+Domain Reload Profiling:
+	ReloadAssembly (727ms)
+		BeginReloadAssembly (99ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (31ms)
+		EndReloadAssembly (586ms)
+			LoadAssemblies (66ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (212ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (31ms)
+			SetupLoadedEditorAssemblies (210ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (42ms)
+				ProcessInitializeOnLoadAttributes (152ms)
+				ProcessInitializeOnLoadMethodAttributes (6ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.69 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3040 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 331.6 MB.
+System memory in use after: 331.8 MB.
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 4001.
+Total: 3.029800 ms (FindLiveObjects: 0.291400 ms CreateObjectMapping: 0.130000 ms MarkObjects: 2.591300 ms  DeleteObjects: 0.016200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 43.931278 seconds.
+  path: Assets/Resources/Imported Folders/Celt Export Folder/Textures/Greid_Brown_Shield_Blue_Pants_Tat_None_albedo.png
+  artifactKey: Guid(bdf2ef8c689e44c48aa73ece3e345cda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Imported Folders/Celt Export Folder/Textures/Greid_Brown_Shield_Blue_Pants_Tat_None_albedo.png using Guid(bdf2ef8c689e44c48aa73ece3e345cda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63781040fd6396cb828a2e8de7a627c2') in 0.056397 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004236 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.749 seconds
+Domain Reload Profiling:
+	ReloadAssembly (750ms)
+		BeginReloadAssembly (101ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (34ms)
+		EndReloadAssembly (603ms)
+			LoadAssemblies (67ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (223ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (31ms)
+			SetupLoadedEditorAssemblies (220ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (47ms)
+				ProcessInitializeOnLoadAttributes (157ms)
+				ProcessInitializeOnLoadMethodAttributes (6ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3041 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 334.7 MB.
+System memory in use after: 334.9 MB.
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 4018.
+Total: 3.214900 ms (FindLiveObjects: 0.346800 ms CreateObjectMapping: 0.182100 ms MarkObjects: 2.668100 ms  DeleteObjects: 0.017000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004256 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.70 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.748 seconds
+Domain Reload Profiling:
+	ReloadAssembly (748ms)
+		BeginReloadAssembly (106ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (31ms)
+		EndReloadAssembly (602ms)
+			LoadAssemblies (69ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (223ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (31ms)
+			SetupLoadedEditorAssemblies (210ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (42ms)
+				ProcessInitializeOnLoadAttributes (151ms)
+				ProcessInitializeOnLoadMethodAttributes (6ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.69 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3040 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 334.7 MB.
+System memory in use after: 334.9 MB.
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 4020.
+Total: 3.061900 ms (FindLiveObjects: 0.293100 ms CreateObjectMapping: 0.112900 ms MarkObjects: 2.639000 ms  DeleteObjects: 0.016300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004380 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.11 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.810 seconds
+Domain Reload Profiling:
+	ReloadAssembly (810ms)
+		BeginReloadAssembly (121ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (39ms)
+		EndReloadAssembly (640ms)
+			LoadAssemblies (73ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (232ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (31ms)
+			SetupLoadedEditorAssemblies (241ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (49ms)
+				ProcessInitializeOnLoadAttributes (173ms)
+				ProcessInitializeOnLoadMethodAttributes (7ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.08 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3040 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 334.7 MB.
+System memory in use after: 334.9 MB.
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 4022.
+Total: 3.819700 ms (FindLiveObjects: 0.323500 ms CreateObjectMapping: 0.158300 ms MarkObjects: 3.319800 ms  DeleteObjects: 0.017200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004043 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.717 seconds
+Domain Reload Profiling:
+	ReloadAssembly (717ms)
+		BeginReloadAssembly (94ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (30ms)
+		EndReloadAssembly (583ms)
+			LoadAssemblies (63ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (207ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (31ms)
+			SetupLoadedEditorAssemblies (213ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (46ms)
+				ProcessInitializeOnLoadAttributes (151ms)
+				ProcessInitializeOnLoadMethodAttributes (6ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.69 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3040 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 334.8 MB.
+System memory in use after: 335.0 MB.
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 4024.
+Total: 3.052500 ms (FindLiveObjects: 0.282500 ms CreateObjectMapping: 0.131400 ms MarkObjects: 2.623200 ms  DeleteObjects: 0.014800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004157 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.70 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.731 seconds
+Domain Reload Profiling:
+	ReloadAssembly (731ms)
+		BeginReloadAssembly (95ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (31ms)
+		EndReloadAssembly (593ms)
+			LoadAssemblies (63ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (211ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (31ms)
+			SetupLoadedEditorAssemblies (220ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (43ms)
+				ProcessInitializeOnLoadAttributes (156ms)
+				ProcessInitializeOnLoadMethodAttributes (9ms)
+				AfterProcessingInitializeOnLoad (8ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3040 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 334.8 MB.
+System memory in use after: 335.0 MB.
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 4026.
+Total: 3.013700 ms (FindLiveObjects: 0.305900 ms CreateObjectMapping: 0.119100 ms MarkObjects: 2.571800 ms  DeleteObjects: 0.016400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004128 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.712 seconds
+Domain Reload Profiling:
+	ReloadAssembly (713ms)
+		BeginReloadAssembly (101ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (29ms)
+		EndReloadAssembly (571ms)
+			LoadAssemblies (63ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (206ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (31ms)
+			SetupLoadedEditorAssemblies (208ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (40ms)
+				ProcessInitializeOnLoadAttributes (151ms)
+				ProcessInitializeOnLoadMethodAttributes (7ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.67 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3040 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 334.8 MB.
+System memory in use after: 335.0 MB.
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 4028.
+Total: 3.192500 ms (FindLiveObjects: 0.285300 ms CreateObjectMapping: 0.132100 ms MarkObjects: 2.758200 ms  DeleteObjects: 0.016200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004175 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.67 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.704 seconds
+Domain Reload Profiling:
+	ReloadAssembly (704ms)
+		BeginReloadAssembly (99ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (30ms)
+		EndReloadAssembly (565ms)
+			LoadAssemblies (62ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (204ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (30ms)
+			SetupLoadedEditorAssemblies (206ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (41ms)
+				ProcessInitializeOnLoadAttributes (150ms)
+				ProcessInitializeOnLoadMethodAttributes (6ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.66 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3040 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 334.8 MB.
+System memory in use after: 335.0 MB.
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 4030.
+Total: 2.944100 ms (FindLiveObjects: 0.294200 ms CreateObjectMapping: 0.117900 ms MarkObjects: 2.516400 ms  DeleteObjects: 0.014900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004197 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\csmol\Documents\Git Projects\CombatSystemDemo\CombatSystemDemo\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.747 seconds
+Domain Reload Profiling:
+	ReloadAssembly (747ms)
+		BeginReloadAssembly (108ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (33ms)
+		EndReloadAssembly (598ms)
+			LoadAssemblies (65ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (205ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (43ms)
+			SetupLoadedEditorAssemblies (216ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (41ms)
+				ProcessInitializeOnLoadAttributes (159ms)
+				ProcessInitializeOnLoadMethodAttributes (6ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3040 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 334.8 MB.
+System memory in use after: 335.1 MB.
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 4032.
+Total: 3.461700 ms (FindLiveObjects: 0.291800 ms CreateObjectMapping: 0.122000 ms MarkObjects: 3.027300 ms  DeleteObjects: 0.019900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

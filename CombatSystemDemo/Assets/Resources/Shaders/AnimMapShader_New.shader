@@ -18,7 +18,7 @@ Shader "Custom/AnimMapShader_New"
 		//Selection Outline Properties
 		_IsSelected("IsSelected", Float) = 0
 		_OutlineColor("Outline Color", Color) = (1, 0, 0, 1)
-		_OutlineWidth("Outline Width", Float) = 0.01
+		_OutlineWidth("Outline Width", Float) = 0.03
     }
 	SubShader
 	{

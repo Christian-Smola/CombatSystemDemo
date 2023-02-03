@@ -311,6 +311,9 @@ public class CombatSystem : MonoBehaviour
             //if the selectionbox is too small or not enough time has passed use the original raycast method
             if (Math.Abs(SelectionBoxStartPos.x - Input.mousePosition.x) < 30 && Math.Abs(SelectionBoxStartPos.y - Input.mousePosition.y) < 30)
             {
+                foreach (Division div in SelectedDivisions)
+                    ToggleDivisionSelection(div, false);
+
                 SelectedDivisions.Clear();
 
                 RaycastHit hit;
@@ -324,6 +327,7 @@ public class CombatSystem : MonoBehaviour
                             if (hit.transform.parent.gameObject == div.DivisionGO)
                             {
                                 SelectedDivisions.Add(div);
+                                ToggleDivisionSelection(div, true);
                                 break;
                             }
                         }
@@ -333,6 +337,9 @@ public class CombatSystem : MonoBehaviour
             else
             {
                 SelectionBox.SetActive(false);
+
+                foreach (Division div in SelectedDivisions)
+                    ToggleDivisionSelection(div, false);
 
                 SelectedDivisions.Clear();
 
@@ -353,6 +360,7 @@ public class CombatSystem : MonoBehaviour
                     {
                         Debug.Log("UI element is inside the division's boundries");
                         SelectedDivisions.Add(div);
+                        ToggleDivisionSelection(div, true);
                         break;
                     }
 
@@ -365,6 +373,7 @@ public class CombatSystem : MonoBehaviour
                         {
                             //Debug.Log("Corner is inside the UI element");
                             SelectedDivisions.Add(div);
+                            ToggleDivisionSelection(div, true);
                             break;
                         }
                     }
@@ -381,6 +390,7 @@ public class CombatSystem : MonoBehaviour
                     if (LinesIntersect(DivUpperLeft, DivMaxCorner, UpperLeftCorner, Min))
                     {
                         SelectedDivisions.Add(div);
+                        ToggleDivisionSelection(div, true);
                         Debug.Log("Line AB intersects Line EG");
                         continue;
                     }
@@ -388,6 +398,7 @@ public class CombatSystem : MonoBehaviour
                     if (LinesIntersect(DivUpperLeft, DivMaxCorner, Max, LowerRightCorner))
                     {
                         SelectedDivisions.Add(div);
+                        ToggleDivisionSelection(div, true);
                         Debug.Log("Line AB intersects Line FH");
                         continue;
                     }
@@ -395,6 +406,7 @@ public class CombatSystem : MonoBehaviour
                     if (LinesIntersect(DivMinCorner, DivLowerRight, UpperLeftCorner, Min))
                     {
                         SelectedDivisions.Add(div);
+                        ToggleDivisionSelection(div, true);
                         Debug.Log("Line CD intersects Line EG");
                         continue;
                     }
@@ -402,6 +414,7 @@ public class CombatSystem : MonoBehaviour
                     if (LinesIntersect(DivMinCorner, DivLowerRight, Max, LowerRightCorner))
                     {
                         SelectedDivisions.Add(div);
+                        ToggleDivisionSelection(div, true);
                         Debug.Log("Line CD intersects Line FH");
                         continue;
                     }
@@ -409,6 +422,7 @@ public class CombatSystem : MonoBehaviour
                     if (LinesIntersect(DivUpperLeft, DivMinCorner, UpperLeftCorner, Max))
                     {
                         SelectedDivisions.Add(div);
+                        ToggleDivisionSelection(div, true);
                         Debug.Log("Line AC intersect Line EF");
                         continue;
                     }
@@ -416,6 +430,7 @@ public class CombatSystem : MonoBehaviour
                     if (LinesIntersect(DivUpperLeft, DivMinCorner, Min, LowerRightCorner))
                     {
                         SelectedDivisions.Add(div);
+                        ToggleDivisionSelection(div, true);
                         Debug.Log("Line AC intersect Line GH");
                         continue;
                     }
@@ -423,6 +438,7 @@ public class CombatSystem : MonoBehaviour
                     if (LinesIntersect(DivMaxCorner, DivLowerRight, UpperLeftCorner, Max))
                     {
                         SelectedDivisions.Add(div);
+                        ToggleDivisionSelection(div, true);
                         Debug.Log("Line BD intersect Line EF");
                         continue;
                     }
@@ -430,6 +446,7 @@ public class CombatSystem : MonoBehaviour
                     if (LinesIntersect(DivMaxCorner, DivLowerRight, Min, LowerRightCorner))
                     {
                         SelectedDivisions.Add(div);
+                        ToggleDivisionSelection(div, true);
                         Debug.Log("Line BD intersect Line GH");
                         continue;
                     }
@@ -437,6 +454,7 @@ public class CombatSystem : MonoBehaviour
                     if (LinesIntersect(DivUpperLeft, DivMaxCorner, UpperLeftCorner, Max))
                     {
                         SelectedDivisions.Add(div);
+                        ToggleDivisionSelection(div, true);
                         Debug.Log("Line AB intersects Line EF");
                         continue;
                     }
@@ -444,6 +462,7 @@ public class CombatSystem : MonoBehaviour
                     if (LinesIntersect(DivUpperLeft, DivMaxCorner, Min, LowerRightCorner))
                     {
                         SelectedDivisions.Add(div);
+                        ToggleDivisionSelection(div, true);
                         Debug.Log("Line AB intersects Line GH");
                         continue;
                     }
@@ -451,6 +470,7 @@ public class CombatSystem : MonoBehaviour
                     if (LinesIntersect(DivMinCorner, DivLowerRight, UpperLeftCorner, Max))
                     {
                         SelectedDivisions.Add(div);
+                        ToggleDivisionSelection(div, true);
                         Debug.Log("Line CD intersects Line EF");
                         continue;
                     }
@@ -458,6 +478,7 @@ public class CombatSystem : MonoBehaviour
                     if (LinesIntersect(DivMinCorner, DivLowerRight, Min, LowerRightCorner))
                     {
                         SelectedDivisions.Add(div);
+                        ToggleDivisionSelection(div, true);
                         Debug.Log("Line CD intersects Line GH");
                         continue;
                     }
@@ -465,6 +486,7 @@ public class CombatSystem : MonoBehaviour
                     if (LinesIntersect(DivUpperLeft, DivMinCorner, UpperLeftCorner, Min))
                     {
                         SelectedDivisions.Add(div);
+                        ToggleDivisionSelection(div, true);
                         Debug.Log("Line AC intersects Line EG");
                         continue;
                     }
@@ -472,6 +494,7 @@ public class CombatSystem : MonoBehaviour
                     if (LinesIntersect(DivUpperLeft, DivMinCorner, Max, LowerRightCorner))
                     {
                         SelectedDivisions.Add(div);
+                        ToggleDivisionSelection(div, true);
                         Debug.Log("Line AC intersects Line FH");
                         continue;
                     }
@@ -479,6 +502,7 @@ public class CombatSystem : MonoBehaviour
                     if (LinesIntersect(DivMaxCorner, DivLowerRight, UpperLeftCorner, Min))
                     {
                         SelectedDivisions.Add(div);
+                        ToggleDivisionSelection(div, true);
                         Debug.Log("Line BD intersects Line EG");
                         continue;
                     }
@@ -486,6 +510,7 @@ public class CombatSystem : MonoBehaviour
                     if (LinesIntersect(DivMaxCorner, DivLowerRight, Max, LowerRightCorner))
                     {
                         SelectedDivisions.Add(div);
+                        ToggleDivisionSelection(div, true);
                         Debug.Log("Line BD intersects Line FH");
                         continue;
                     }
@@ -3412,6 +3437,37 @@ public class CombatSystem : MonoBehaviour
                     }
                 }
             }
+        }
+    }
+
+    private void ToggleDivisionSelection(Division div, bool ToggleOn)
+    {
+        try
+        {
+            foreach (Soldier sol in div.SoldierList)
+            {
+                foreach (Transform child in sol.SoldierGO.transform)
+                {
+                    if (child.gameObject.name == "Cone")
+                        continue;
+
+                    MeshRenderer renderer = child.gameObject.GetComponent<MeshRenderer>();
+
+                    if (renderer.material.shader.GetPropertyName(9) == "_IsSelected")
+                    {
+                        if (ToggleOn)
+                            renderer.material.SetFloat(renderer.material.shader.GetPropertyName(9), 1);
+                        else
+                            renderer.material.SetFloat(renderer.material.shader.GetPropertyName(9), 0);
+                    }
+                    else
+                        Debug.Log("Shader Property number nine is not _IsSelected");
+                }
+            }
+        }
+        catch(System.Exception ex)
+        {
+            Debug.Log(ex.Message);
         }
     }
 
