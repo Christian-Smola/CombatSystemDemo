@@ -62,6 +62,7 @@
     <Compile Include="Assets\Resources\Scripts\CombatSystem.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Resources\Shaders\AnimMapShader_New.shader" />
     <None Include="Assets\Resources\Imported Folders\Medieval Fortification\Read me.txt" />
     <None Include="Assets\Resources\Shaders\AnimMapShader 2.shader" />
     <None Include="Assets\Resources\Shaders\AnimMapShader 1.shader" />
