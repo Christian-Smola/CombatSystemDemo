@@ -297,6 +297,14 @@ public class CombatSystem : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
+            if (ListofDivisionPlacementUIElements.Count > 0)
+            {
+                foreach (GameObject element in ListofDivisionPlacementUIElements)
+                    Destroy(element);
+
+                ListofDivisionPlacementUIElements.Clear();
+            }
+
             SelectionBoxStartPos = Input.mousePosition;
             SelectionBox.SetActive(true);
 
