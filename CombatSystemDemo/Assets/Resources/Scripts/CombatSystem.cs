@@ -219,7 +219,7 @@ public class CombatSystem : MonoBehaviour
 
         int DivisionWidth = 15;
 
-        int NumberOfDivisions = 3;
+        int NumberOfDivisions = 7;
 
         float Offset = 0f;
 
@@ -580,13 +580,6 @@ public class CombatSystem : MonoBehaviour
                         else if (AngleChange < 0)
                             AngleChange += 360;
                     }
-
-                    //All the commented Functions below should probably be done in the child thread
-
-                    //Set Animations
-                    //lock (FunctionsToRunInChildThread)
-                    //    FunctionsToRunInChildThread.Add(() => { SetAnimations(AnimationArray[1], div); });
-                    //SetAnimations(AnimationArray[1], div);
 
                     div.PreviousDirection = div.CurrentDirection;
 
@@ -1027,7 +1020,7 @@ public class CombatSystem : MonoBehaviour
 
         if (CurrentPosHit.transform.tag == "Terrain" && StartPosHit.transform.tag == "Terrain")
         {
-            float angle = (Mathf.Atan2(StartPosHit.point.x - CurrentPosHit.point.x, StartPosHit.point.z - CurrentPosHit.point.z) * 180f / Mathf.PI);
+            float Angle = (Mathf.Atan2(StartPosHit.point.x - CurrentPosHit.point.x, StartPosHit.point.z - CurrentPosHit.point.z) * Mathf.Rad2Deg);
 
             Vector3 AB = CurrentPosHit.point - StartPosHit.point;
 
@@ -1035,6 +1028,8 @@ public class CombatSystem : MonoBehaviour
 
             int TempWidth = 0;
             float TempDepth = 0f;
+
+            Vector3 Offset = new Vector3((DistFromStartToCursor / (SelectedDivisions.Count * 2)) * Mathf.Sin(Angle * (Mathf.PI/ 180f)), 0f, (DistFromStartToCursor / (SelectedDivisions.Count * 2)) * Mathf.Cos(Angle * (Mathf.PI / 180f)));
 
             List<GameObject> UIElementsToAssign = new List<GameObject>();
 
@@ -1044,23 +1039,23 @@ public class CombatSystem : MonoBehaviour
 
                 if (DistFromStartToCursor <= MaxDistance && DistFromStartToCursor >= MinDistance)
                 {
-                    UIelement.transform.position = new Vector3(0f, 0.1f, 0f) + StartPosHit.point + (AB * ((float)x / (float)SelectedDivisions.Count));
+                    UIelement.transform.position = new Vector3(0f, 0.1f, 0f) - Offset + StartPosHit.point + (AB * ((float)x / (float)SelectedDivisions.Count));
                 }
                 else if (DistFromStartToCursor > MaxDistance)
                 {
-                    Vector3 C = new Vector3(StartPosHit.point.x + (-MaxDistance * Mathf.Sin(angle * (Mathf.PI / 180f))), 0f, StartPosHit.point.z + (-MaxDistance * Mathf.Cos(angle * (Mathf.PI / 180f))));
+                    Vector3 C = new Vector3(StartPosHit.point.x + (-MaxDistance * Mathf.Sin(Angle * (Mathf.PI / 180f))), 0f, StartPosHit.point.z + (-MaxDistance * Mathf.Cos(Angle * (Mathf.PI / 180f))));
 
                     Vector3 AC = C - StartPosHit.point;
 
-                    UIelement.transform.position = new Vector3(0f, 0.1f, 0f) + StartPosHit.point + (AC * ((float)x / (float)SelectedDivisions.Count));
+                    UIelement.transform.position = new Vector3(0f, 0.1f, 0f) - Offset + StartPosHit.point + (AC * ((float)x / (float)SelectedDivisions.Count));
                 }
                 else if (DistFromStartToCursor < MinDistance)
                 {
-                    Vector3 C = new Vector3(StartPosHit.point.x + (-MinDistance * Mathf.Sin(angle * (Mathf.PI / 180f))), 0f, StartPosHit.point.z + (-MinDistance * Mathf.Cos(angle * (Mathf.PI / 180f))));
+                    Vector3 C = new Vector3(StartPosHit.point.x + (-MinDistance * Mathf.Sin(Angle * (Mathf.PI / 180f))), 0f, StartPosHit.point.z + (-MinDistance * Mathf.Cos(Angle * (Mathf.PI / 180f))));
 
                     Vector3 AC = C - StartPosHit.point;
 
-                    UIelement.transform.position = new Vector3(0f, 0.1f, 0f) + StartPosHit.point + (AC * ((float)x / (float)SelectedDivisions.Count));
+                    UIelement.transform.position = new Vector3(0f, 0.1f, 0f) - Offset + StartPosHit.point + (AC * ((float)x / (float)SelectedDivisions.Count));
                 }
 
                 UIElementsToAssign.Add(UIelement);
@@ -1175,7 +1170,7 @@ public class CombatSystem : MonoBehaviour
                     }
                 }
 
-                ClosestElement.transform.eulerAngles = new Vector3(ClosestElement.transform.eulerAngles.x, angle + 90, ClosestElement.transform.eulerAngles.z);
+                ClosestElement.transform.eulerAngles = new Vector3(ClosestElement.transform.eulerAngles.x, Angle + 90, ClosestElement.transform.eulerAngles.z);
 
                 MeshRenderer UIelementRenderer = ClosestElement.GetComponent<MeshRenderer>();
 

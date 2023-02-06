@@ -18,7 +18,7 @@ Shader "chenjd/AnimMapShader 2"
 
 		[NoScaleOffset] _AnimMap("AnimMap", 2D) = "white" {}
 		_AnimLen("Anim Length", Float) = 0 
-		//Booleans are appartently not a thing, dafuq?
+		//Booleans are appartently not a thing
 		_IsVisible("Visible", Float) = 1
 		Time("Time", Float) = 0
 	}
