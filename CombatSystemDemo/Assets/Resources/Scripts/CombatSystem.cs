@@ -587,19 +587,22 @@ public class CombatSystem : MonoBehaviour
                     {
                         case float a when a <= 45f || a >= 315f:
                             UpdateSoldierPositionsInFormationNew(div, Direction.Forward);
+                            UnitTest_DirectionStandardization(Direction.Forward);
                             break;
 
                         case float a when a >= 135f && a <= 225f:
                             UpdateSoldierPositionsInFormationNew(div, Direction.Back);
+                            UnitTest_DirectionStandardization(Direction.Back);
                             break;
 
                         case float a when a > 225f && a < 315f:
                             UpdateSoldierPositionsInFormationNew(div, Direction.Right);
+                            UnitTest_DirectionStandardization(Direction.Right);
                             break;
 
                         case float a when a < 135 && a > 45f:
-                            //if (div.IsFlipped)
                             UpdateSoldierPositionsInFormationNew(div, Direction.Left);
+                            UnitTest_DirectionStandardization(Direction.Left);
                             break;
 
                     }
@@ -3412,37 +3415,6 @@ public class CombatSystem : MonoBehaviour
         }
     }
 
-    private void SelectAllDivisions()
-    {
-        foreach (Division div in DivisionList)
-        {
-            foreach (Soldier sol in div.SoldierList)
-            {
-                foreach (Transform child in sol.SoldierGO.transform)
-                {
-                    if (!child.gameObject.active)
-                        continue;
-
-                    if (child.gameObject.name == "Cone")
-                        continue;
-
-                    MeshRenderer renderer = child.gameObject.GetComponent<MeshRenderer>();
-
-                    if (renderer.material.shader.GetPropertyName(9) == "_IsSelected")
-                    {
-                        renderer.material.SetFloat(renderer.material.shader.GetPropertyName(9), 1);
-                        Debug.Log("Something should be happening");
-                    }
-                    else
-                    {
-                        Debug.Log(renderer.material.shader.GetPropertyName(9));
-                        break;
-                    }
-                }
-            }
-        }
-    }
-
     private void ToggleDivisionSelection(Division div, bool ToggleOn)
     {
         try
@@ -3472,6 +3444,85 @@ public class CombatSystem : MonoBehaviour
         {
             Debug.Log(ex.Message);
         }
+    }
+
+    public void UnitTest_DirectionStandardization(Direction InputDir)
+    {
+        Direction OutputDir = Direction.LeftForward;
+        float AverageAngle = 0f;
+
+        Ray CursorRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray StartPosRay = Camera.main.ScreenPointToRay(DivisionPlacementBoxStartPos);
+
+        RaycastHit StartPoint;
+        RaycastHit EndPoint;
+
+        //They use binary instead of int for the layermask 
+        // << is shifting a bit one spot to the left 
+        Physics.Raycast(CursorRay, out EndPoint, 1200, 1 << 1);
+        Physics.Raycast(StartPosRay, out StartPoint, 1200, 1 << 1);
+
+        Vector3 MidPoint = (EndPoint.point + StartPoint.point) / 2;
+
+        foreach (Division div in SelectedDivisions)
+        {
+            float Angle = (Mathf.Atan2(MidPoint.x - div.DivisionGO.transform.position.x, MidPoint.z - div.DivisionGO.transform.position.z) * Mathf.Rad2Deg) - div.DivisionGO.transform.localEulerAngles.y;
+
+            while (Angle > 360 || Angle < 0)
+            {
+                if (Angle > 360)
+                    Angle -= 360;
+                else if (Angle < 0)
+                    Angle += 360;
+            }
+
+            switch (Angle)
+            {
+                case float a when a <= 45f || a >= 315f:
+                    Angle = 0;
+                    break;
+                case float a when a > 45f && a < 135f:
+                    Angle = 90;
+                    break;
+                case float a when a >= 135f && a <= 225f:
+                    Angle = 180;
+                    break;
+                case float a when a > 225f && a < 315f:
+                    Angle = 270;
+                    break;
+            }
+
+            AverageAngle += Angle;
+        }
+
+        AverageAngle = AverageAngle / SelectedDivisions.Count;
+
+        while (AverageAngle > 360 || AverageAngle < 0)
+        {
+            if (AverageAngle > 360)
+                AverageAngle -= 360;
+            else if (AverageAngle < 0)
+                AverageAngle += 360;
+        }
+
+        switch (AverageAngle)
+        {
+            case float a when a <= 45f || a >= 315f:
+                OutputDir = Direction.Forward;
+                break;
+            case float a when a > 45f && a < 135f:
+                OutputDir = Direction.Right;
+                break;
+            case float a when a >= 135f && a <= 225f:
+                OutputDir = Direction.Back;
+                break;
+            case float a when a > 225f && a < 315f:
+                OutputDir = Direction.Left;
+                break;
+        }
+
+        if (InputDir != OutputDir)
+            Debug.Log("Input: " + InputDir.ToString() + "; Output: " + OutputDir.ToString());
     }
 
     void OnApplicationQuit()
