@@ -256,32 +256,30 @@ public class CombatSystem : MonoBehaviour
         if (NumberOfDivisions % 2 == 0)
             Offset = 0.5f;
 
-        for (int x = 0; x < NumberOfDivisions; x++)
-        {
-            GameObject GO = new GameObject();
-            GO.transform.position = new Vector3((x * 15f) + 500f - (15f * ((NumberOfDivisions / 2) - Offset)), 0f, 525f);
+        //for (int x = 0; x < NumberOfDivisions; x++)
+        //{
+        //    GameObject GO = new GameObject();
+        //    GO.transform.position = new Vector3((x * 15f) + 500f - (15f * ((NumberOfDivisions / 2) - Offset)), 0f, 525f);
 
-            GO.name = "Roman Division " + x.ToString();
+        //    GO.name = "Roman Division " + x.ToString();
 
-            Division div = new Division(Side.Side2, Formation.Rect, GO, CreateNewSoldierList(68, DivisionWidth, GO, State.Sword, Military.UnitSubTypeList.Where(S => S.Name == "Legionary Sword").ToList()[0], Military.UnitType.HeavyInfantry), DivisionWidth);
+        //    Division div = new Division(Side.Side2, Formation.Rect, GO, CreateNewSoldierList(68, DivisionWidth, GO, State.Sword, Military.UnitSubTypeList.Where(S => S.Name == "Legionary Sword").ToList()[0], Military.UnitType.HeavyInfantry), DivisionWidth);
 
-            div.IsInMotion = true;
+        //    div.IsInMotion = true;
 
-            CalculateMaxAndMinWidth(div);
-            FunctionsToRunInChildThread.Add(() => AssignSoldiersToTheirDiv(div));
+        //    CalculateMaxAndMinWidth(div);
+        //    FunctionsToRunInChildThread.Add(() => AssignSoldiersToTheirDiv(div));
 
-            GO.transform.eulerAngles = new Vector3(0f, 180f, 0f);
+        //    GO.transform.eulerAngles = new Vector3(0f, 180f, 0f);
 
-            EstablishDivisionBorders(div);
-            DivisionList.Add(div);
-        }
+        //    EstablishDivisionBorders(div);
+        //    DivisionList.Add(div);
+        //}
 
         ChildThread = new Thread(ChildThreadFunction);
         ChildThread.Start();
 
         SelectionBox.SetActive(false);
-
-        //SelectAllDivisions();
     }
 
     // Update is called once per frame
@@ -540,8 +538,8 @@ public class CombatSystem : MonoBehaviour
             if (Input.mousePosition != DivisionPlacementBoxCurrentPos)
             {
                 DivisionPlacementBoxCurrentPos = Input.mousePosition;
-                //This needs to be optimized, rn it's having a major effect on our frames
 
+                //This needs to be optimized, rn it's having a major effect on our frames
                 if (Vector3.Distance(DivisionPlacementBoxStartPos, DivisionPlacementBoxCurrentPos) >= 100)
                     UpdateDivisionPlacement();
             }
@@ -555,6 +553,36 @@ public class CombatSystem : MonoBehaviour
             if (DivisionPlacementTimer.ElapsedMilliseconds >= 15 && Vector3.Distance(DivisionPlacementBoxStartPos, DivisionPlacementBoxCurrentPos) >= 100)
             {
                 float Angle = NewDivisionAngle() + 90f;
+
+                //For Testing Purposes
+                foreach (Division div in SelectedDivisions)
+                {
+                    float AngleChange = div.DivisionGO.transform.localEulerAngles.y - Angle;
+
+                    while (AngleChange > 360 || AngleChange < 0)
+                    {
+                        if (AngleChange > 360)
+                            AngleChange -= 360;
+                        else if (AngleChange < 0)
+                            AngleChange += 360;
+                    }
+
+                    switch (AngleChange)
+                    {
+                        case float a when a <= 45f || a >= 315f:
+                            UnitTest_DirectionStandardization(Direction.Forward, Angle);
+                            break;
+                        case float a when a >= 135f && a <= 225f:
+                            UnitTest_DirectionStandardization(Direction.Back, Angle);
+                            break;
+                        case float a when a > 225f && a < 315f:
+                            UnitTest_DirectionStandardization(Direction.Right, Angle);
+                            break;
+                        case float a when a < 135 && a > 45f:
+                            UnitTest_DirectionStandardization(Direction.Left, Angle);
+                            break;
+                    }
+                }
 
                 foreach (Division div in SelectedDivisions)
                 {
@@ -587,22 +615,18 @@ public class CombatSystem : MonoBehaviour
                     {
                         case float a when a <= 45f || a >= 315f:
                             UpdateSoldierPositionsInFormationNew(div, Direction.Forward);
-                            UnitTest_DirectionStandardization(Direction.Forward);
                             break;
 
                         case float a when a >= 135f && a <= 225f:
                             UpdateSoldierPositionsInFormationNew(div, Direction.Back);
-                            UnitTest_DirectionStandardization(Direction.Back);
                             break;
 
                         case float a when a > 225f && a < 315f:
                             UpdateSoldierPositionsInFormationNew(div, Direction.Right);
-                            UnitTest_DirectionStandardization(Direction.Right);
                             break;
 
                         case float a when a < 135 && a > 45f:
                             UpdateSoldierPositionsInFormationNew(div, Direction.Left);
-                            UnitTest_DirectionStandardization(Direction.Left);
                             break;
 
                     }
@@ -740,8 +764,6 @@ public class CombatSystem : MonoBehaviour
                             GameObject go = new GameObject();
                             go.transform.position = ChosenDestination;
                             go.transform.localEulerAngles = new Vector3(0f, AverageAngle + Pair.Value.DivisionGO.transform.localEulerAngles.y, 0f);
-
-                            //Debug.Log("GameObject Rotation: " + (AverageAngle - Pair.Value.DivisionGO.transform.localEulerAngles.y));
 
                             foreach (Soldier child in Pair.Value.SoldierList)
                                 child.SoldierGO.transform.SetParent(go.transform);
@@ -1581,7 +1603,7 @@ public class CombatSystem : MonoBehaviour
             if (Temp != div.SoldierList.Count && CurrentRowWidth != DesiredRowWidth)
             {
                 Debug.Log("Major Bug!!!!!!");
-                Time.timeScale = 0;
+                //Time.timeScale = 0;
             }
 
             if (CurrentRowWidth < DesiredRowWidth)
@@ -3446,10 +3468,11 @@ public class CombatSystem : MonoBehaviour
         }
     }
 
-    public void UnitTest_DirectionStandardization(Direction InputDir)
+    public void UnitTest_DirectionStandardization(Direction InputDir, float LocalEulerAngleY)
     {
         Direction OutputDir = Direction.LeftForward;
         float AverageAngle = 0f;
+        float LocalEulerAngle_Y_Rapid = 0f;
 
         Ray CursorRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         Ray StartPosRay = Camera.main.ScreenPointToRay(DivisionPlacementBoxStartPos);
@@ -3505,6 +3528,8 @@ public class CombatSystem : MonoBehaviour
                 AverageAngle += 360;
         }
 
+
+        //Perhaps we should force the value here as well
         switch (AverageAngle)
         {
             case float a when a <= 45f || a >= 315f:
@@ -3521,8 +3546,39 @@ public class CombatSystem : MonoBehaviour
                 break;
         }
 
-        if (InputDir != OutputDir)
-            Debug.Log("Input: " + InputDir.ToString() + "; Output: " + OutputDir.ToString());
+        float CurrentRotation = 0f;
+
+        foreach (Division div in SelectedDivisions)
+        {
+            switch (div.DivisionGO.transform.localEulerAngles.y)
+            {
+                case float a when a <= 45f || a >= 315f:
+                    CurrentRotation = 0f;
+                    break;
+                case float a when a > 45f && a < 135f:
+                    CurrentRotation = 90f;
+                    break;
+                case float a when a >= 135f && a <= 225f:
+                    CurrentRotation = 180f;
+                    break;
+                case float a when a > 225f && a < 315f:
+                    CurrentRotation = 270f;
+                    break;
+            }
+
+            LocalEulerAngle_Y_Rapid = AverageAngle + CurrentRotation;
+
+            while (LocalEulerAngle_Y_Rapid > 360 || LocalEulerAngle_Y_Rapid < 0)
+            {
+                if (LocalEulerAngle_Y_Rapid > 360)
+                    LocalEulerAngle_Y_Rapid -= 360;
+                else if (LocalEulerAngle_Y_Rapid < 0)
+                    LocalEulerAngle_Y_Rapid += 360;
+            }
+
+            Debug.Log(Environment.NewLine + "Rapid Direction: " + OutputDir.ToString() + Environment.NewLine + "Precise Direction: " + InputDir.ToString() + Environment.NewLine + "Rapid Angle: " + LocalEulerAngle_Y_Rapid + Environment.NewLine + "Precise Angle: " + LocalEulerAngleY + Environment.NewLine);
+
+        }
     }
 
     void OnApplicationQuit()
