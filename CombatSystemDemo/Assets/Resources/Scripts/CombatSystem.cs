@@ -243,7 +243,7 @@ public class CombatSystem : MonoBehaviour
             lock (FunctionsToRunInChildThread)
                 FunctionsToRunInChildThread.Add(() => AssignSoldiersToTheirDiv(div));
 
-            //GO.transform.eulerAngles = new Vector3(0f, -90f, 0f);
+            GO.transform.eulerAngles = new Vector3(0f, 0f, 0f);
 
             EstablishDivisionBorders(div);
             DivisionList.Add(div);
@@ -650,139 +650,141 @@ public class CombatSystem : MonoBehaviour
                 {
                     if (hit.transform.tag == "Terrain")
                     {
-                        float TotalWidth = 0f;
-                        float AverageAngle = 0f;
-                        Direction dir = Direction.Forward;
 
-                        foreach (Division div in SelectedDivisions)
-                        {
-                            TotalWidth += div.Width + 0.25f;
+                        RapidDeployment(hit.point);
+                        //float TotalWidth = 0f;
+                        //float AverageAngle = 0f;
+                        //Direction dir = Direction.Forward;
 
-                            float Angle = (Mathf.Atan2(hit.point.x - div.DivisionGO.transform.position.x, hit.point.z - div.DivisionGO.transform.position.z) * Mathf.Rad2Deg) - div.DivisionGO.transform.localEulerAngles.y;
+                        //foreach (Division div in SelectedDivisions)
+                        //{
+                        //    TotalWidth += div.Width + 0.25f;
 
-                            while (Angle > 360 || Angle < 0)
-                            {
-                                if (Angle > 360)
-                                    Angle -= 360;
-                                else if (Angle < 0)
-                                    Angle += 360;
-                            } 
+                        //    float Angle = (Mathf.Atan2(hit.point.x - div.DivisionGO.transform.position.x, hit.point.z - div.DivisionGO.transform.position.z) * Mathf.Rad2Deg) - div.DivisionGO.transform.localEulerAngles.y;
 
-                            switch (Angle)
-                            {
-                                case float a when a <= 45f || a >= 315f:
-                                    Angle = 0;
-                                    break;
-                                case float a when a > 45f && a < 135f:
-                                    Angle = 90;
-                                    break;
-                                case float a when a >= 135f && a <= 225f:
-                                    Angle = 180;
-                                    break;
-                                case float a when a > 225f && a < 315f:
-                                    Angle = 270;
-                                    break;
-                            }
+                        //    while (Angle > 360 || Angle < 0)
+                        //    {
+                        //        if (Angle > 360)
+                        //            Angle -= 360;
+                        //        else if (Angle < 0)
+                        //            Angle += 360;
+                        //    } 
 
-                            AverageAngle += Angle;
-                        }
+                        //    switch (Angle)
+                        //    {
+                        //        case float a when a <= 45f || a >= 315f:
+                        //            Angle = 0;
+                        //            break;
+                        //        case float a when a > 45f && a < 135f:
+                        //            Angle = 90;
+                        //            break;
+                        //        case float a when a >= 135f && a <= 225f:
+                        //            Angle = 180;
+                        //            break;
+                        //        case float a when a > 225f && a < 315f:
+                        //            Angle = 270;
+                        //            break;
+                        //    }
 
-                        AverageAngle = AverageAngle / SelectedDivisions.Count;
+                        //    AverageAngle += Angle;
+                        //}
 
-                        while (AverageAngle > 360 || AverageAngle < 0)
-                        {
-                            if (AverageAngle > 360)
-                                AverageAngle -= 360;
-                            else if (AverageAngle < 0)
-                                AverageAngle += 360;
-                        }
+                        //AverageAngle = AverageAngle / SelectedDivisions.Count;
 
-                        switch (AverageAngle)
-                        {
-                            case float a when a <= 45f || a >= 315f:
-                                dir = Direction.Forward;
-                                break;
-                            case float a when a > 45f && a < 135f:
-                                dir = Direction.Right;
-                                break;
-                            case float a when a >= 135f && a <= 225f:
-                                dir = Direction.Back;
-                                break;
-                            case float a when a > 225f && a < 315f:
-                                dir = Direction.Left;
-                                break;
-                        }
+                        //while (AverageAngle > 360 || AverageAngle < 0)
+                        //{
+                        //    if (AverageAngle > 360)
+                        //        AverageAngle -= 360;
+                        //    else if (AverageAngle < 0)
+                        //        AverageAngle += 360;
+                        //}
 
-                        Vector3 A = new Vector3(hit.point.x + (-(TotalWidth / 2) * Mathf.Cos(AverageAngle * (Mathf.PI / 180f))), 0f, hit.point.z + (-(TotalWidth / 2) * Mathf.Sin(AverageAngle * Mathf.PI / 180f)));
-                        Vector3 B = new Vector3(hit.point.x - (-(TotalWidth / 2) * Mathf.Cos(AverageAngle * (Mathf.PI / 180f))), 0f, hit.point.z - (-(TotalWidth / 2) * Mathf.Sin(AverageAngle * Mathf.PI / 180f)));
+                        //switch (AverageAngle)
+                        //{
+                        //    case float a when a <= 45f || a >= 315f:
+                        //        dir = Direction.Forward;
+                        //        break;
+                        //    case float a when a > 45f && a < 135f:
+                        //        dir = Direction.Right;
+                        //        break;
+                        //    case float a when a >= 135f && a <= 225f:
+                        //        dir = Direction.Back;
+                        //        break;
+                        //    case float a when a > 225f && a < 315f:
+                        //        dir = Direction.Left;
+                        //        break;
+                        //}
 
-                        Vector3 AB = A - B;
+                        //Vector3 A = new Vector3(hit.point.x + (-(TotalWidth / 2) * Mathf.Cos(AverageAngle * (Mathf.PI / 180f))), 0f, hit.point.z + (-(TotalWidth / 2) * Mathf.Sin(AverageAngle * Mathf.PI / 180f)));
+                        //Vector3 B = new Vector3(hit.point.x - (-(TotalWidth / 2) * Mathf.Cos(AverageAngle * (Mathf.PI / 180f))), 0f, hit.point.z - (-(TotalWidth / 2) * Mathf.Sin(AverageAngle * Mathf.PI / 180f)));
 
-                        Debug.DrawLine(hit.point, hit.point + (Vector3.up * 6f), Color.white, 50);
-                        Debug.DrawLine(A, A + (Vector3.up * 6f), Color.blue, 50);
-                        Debug.DrawLine(B, B + (Vector3.up * 6f), Color.red, 50);
+                        //Vector3 AB = A - B;
 
-                        Dictionary<float, Division> DivDistPairs = new Dictionary<float, Division>();
-                        List<Vector3> Destinations = new List<Vector3>();
+                        //Debug.DrawLine(hit.point, hit.point + (Vector3.up * 6f), Color.white, 50);
+                        //Debug.DrawLine(A, A + (Vector3.up * 6f), Color.blue, 50);
+                        //Debug.DrawLine(B, B + (Vector3.up * 6f), Color.red, 50);
 
-                        Vector3 StartPos = new Vector3(0f, 0.1f, 0f) + A + new Vector3((TotalWidth / (SelectedDivisions.Count * 2)) * Mathf.Cos(AverageAngle * (Mathf.PI / 180f)), 0f, (TotalWidth / (SelectedDivisions.Count * 2)) * Mathf.Sin(AverageAngle * (Mathf.PI / 180f)));
+                        //Dictionary<float, Division> DivDistPairs = new Dictionary<float, Division>();
+                        //List<Vector3> Destinations = new List<Vector3>();
 
-                        for (int x = 0; x < SelectedDivisions.Count; x++)
-                            Destinations.Add(StartPos - (AB * ((float)x / (float)SelectedDivisions.Count)));
+                        //Vector3 StartPos = new Vector3(0f, 0.1f, 0f) + A + new Vector3((TotalWidth / (SelectedDivisions.Count * 2)) * Mathf.Cos(AverageAngle * (Mathf.PI / 180f)), 0f, (TotalWidth / (SelectedDivisions.Count * 2)) * Mathf.Sin(AverageAngle * (Mathf.PI / 180f)));
 
-                        foreach (Vector3 Dest in Destinations)
-                            Debug.DrawLine(Dest, Dest + (Vector3.up * 4f), Color.magenta, 50);
+                        //for (int x = 0; x < SelectedDivisions.Count; x++)
+                        //    Destinations.Add(StartPos - (AB * ((float)x / (float)SelectedDivisions.Count)));
 
-                        foreach (Division div in SelectedDivisions)
-                        {
-                            float CombinedDist = 0f;
+                        //foreach (Vector3 Dest in Destinations)
+                        //    Debug.DrawLine(Dest, Dest + (Vector3.up * 4f), Color.magenta, 50);
 
-                            for (int i = 0; i < SelectedDivisions.Count; i++)
-                                CombinedDist += Math.Abs(Vector3.Distance(div.DivisionGO.transform.position, Destinations[i]));
+                        //foreach (Division div in SelectedDivisions)
+                        //{
+                        //    float CombinedDist = 0f;
 
-                            DivDistPairs.Add(CombinedDist, div);
-                        }
+                        //    for (int i = 0; i < SelectedDivisions.Count; i++)
+                        //        CombinedDist += Math.Abs(Vector3.Distance(div.DivisionGO.transform.position, Destinations[i]));
 
-                        foreach (KeyValuePair<float, Division> Pair in DivDistPairs.OrderByDescending(D => D.Key))
-                        {
-                            float ClosestDist = 1000000000f;
-                            Vector3 ChosenDestination = new Vector3();
+                        //    DivDistPairs.Add(CombinedDist, div);
+                        //}
 
-                            foreach (Vector3 Dest in Destinations)
-                            {
-                                float DistToDestination = Math.Abs(Vector3.Distance(Pair.Value.DivisionGO.transform.position, Dest));
+                        //foreach (KeyValuePair<float, Division> Pair in DivDistPairs.OrderByDescending(D => D.Key))
+                        //{
+                        //    float ClosestDist = 1000000000f;
+                        //    Vector3 ChosenDestination = new Vector3();
 
-                                if (DistToDestination < ClosestDist)
-                                {
-                                    ClosestDist = DistToDestination;
-                                    ChosenDestination = Dest;
-                                }
-                            }
+                        //    foreach (Vector3 Dest in Destinations)
+                        //    {
+                        //        float DistToDestination = Math.Abs(Vector3.Distance(Pair.Value.DivisionGO.transform.position, Dest));
 
-                            Destinations.Remove(ChosenDestination);
+                        //        if (DistToDestination < ClosestDist)
+                        //        {
+                        //            ClosestDist = DistToDestination;
+                        //            ChosenDestination = Dest;
+                        //        }
+                        //    }
 
-                            GameObject go = new GameObject();
-                            go.transform.position = ChosenDestination;
-                            go.transform.localEulerAngles = new Vector3(0f, AverageAngle + Pair.Value.DivisionGO.transform.localEulerAngles.y, 0f);
+                        //    Destinations.Remove(ChosenDestination);
 
-                            foreach (Soldier child in Pair.Value.SoldierList)
-                                child.SoldierGO.transform.SetParent(go.transform);
+                        //    GameObject go = new GameObject();
+                        //    go.transform.position = ChosenDestination;
+                        //    go.transform.localEulerAngles = new Vector3(0f, AverageAngle + Pair.Value.DivisionGO.transform.localEulerAngles.y, 0f);
 
-                            string strName = Pair.Value.DivisionGO.name;
+                        //    foreach (Soldier child in Pair.Value.SoldierList)
+                        //        child.SoldierGO.transform.SetParent(go.transform);
 
-                            Destroy(Pair.Value.DivisionGO);
-                            go.name = strName;
-                            Pair.Value.DivisionGO = go;
+                        //    string strName = Pair.Value.DivisionGO.name;
 
-                            Pair.Value.TempWidth = Pair.Value.Width;
+                        //    Destroy(Pair.Value.DivisionGO);
+                        //    go.name = strName;
+                        //    Pair.Value.DivisionGO = go;
 
-                            UpdateSoldierPositionsInFormationNew(Pair.Value, dir);
+                        //    Pair.Value.TempWidth = Pair.Value.Width;
 
-                            Pair.Value.IsInMotion = true;
+                        //    UpdateSoldierPositionsInFormationNew(Pair.Value, dir);
 
-                            foreach (Soldier sol in Pair.Value.SoldierList)
-                                sol.IsInMotion = true;
-                        }
+                        //    Pair.Value.IsInMotion = true;
+
+                        //    foreach (Soldier sol in Pair.Value.SoldierList)
+                        //        sol.IsInMotion = true;
+                        //}
                     }
                 }
             }
@@ -3463,6 +3465,141 @@ public class CombatSystem : MonoBehaviour
             }
         }
         catch(System.Exception ex)
+        {
+            Debug.Log(ex.Message);
+        }
+    }
+
+    public void RapidDeployment(Vector3 hit)
+    {
+        try
+        {
+            Vector3 Midpoint = new Vector3();
+            Direction dir = Direction.LeftForward;
+            float TotalWidth = 0f;
+
+            foreach (Division div in SelectedDivisions)
+            {
+                TotalWidth += div.Width + 0.25f;
+                Midpoint += div.DivisionGO.transform.position;
+            }
+
+            Midpoint = Midpoint / SelectedDivisions.Count;
+
+            float AverageAngle = (Mathf.Atan2(hit.x - Midpoint.x, hit.z - Midpoint.z) * Mathf.Rad2Deg);
+
+            //Debug.DrawLine(Midpoint, Midpoint + (Vector3.up * 4f), Color.magenta, 10f);
+
+            while (AverageAngle >= 360 || AverageAngle < 0)
+            {
+                if (AverageAngle >= 360)
+                    AverageAngle -= 360;
+                if (AverageAngle < 0)
+                    AverageAngle += 360;
+            }
+
+            Vector3 A = new Vector3(hit.x + (-(TotalWidth / 2) * Mathf.Cos(AverageAngle * (Mathf.PI / 180f))), 0f, hit.z - (-(TotalWidth / 2) * Mathf.Sin(AverageAngle * (Mathf.PI / 180f))));
+            Vector3 B = new Vector3(hit.x - (-(TotalWidth / 2) * Mathf.Cos(AverageAngle * (Mathf.PI / 180f))), 0f, hit.z + (-(TotalWidth / 2) * Mathf.Sin(AverageAngle * (Mathf.PI / 180f))));
+
+            Vector3 AB = A - B;
+
+            Debug.DrawLine(hit, hit + (Vector3.up * 4f), Color.white, 50f);
+            Debug.DrawLine(A, A + (Vector3.up * 4f), Color.blue, 50f);
+            Debug.DrawLine(B, B + (Vector3.up * 4f), Color.red, 50f);
+
+            Dictionary<float, Division> DivDistPairs = new Dictionary<float, Division>();
+            List<Vector3> Destinations = new List<Vector3>();
+
+            Vector3 StartPos = new Vector3(0f, 0.1f, 0f) + A - new Vector3(-(TotalWidth / (SelectedDivisions.Count * 2)) * Mathf.Cos(AverageAngle * (Mathf.PI / 180f)), 0f, (TotalWidth / (SelectedDivisions.Count * 2)) * Mathf.Sin(AverageAngle * (Mathf.PI / 180f)));
+
+            for (int x = 0; x < SelectedDivisions.Count; x++)
+                Destinations.Add(StartPos - (AB * ((float)x / (float)SelectedDivisions.Count)));
+
+            foreach (Vector3 Dest in Destinations)
+                Debug.DrawLine(Dest, Dest + (Vector3.up * 3f), Color.green, 50f);
+
+            foreach (Division div in SelectedDivisions)
+            {
+                float CombinedDist = 0f;
+
+                for (int i = 0; i < SelectedDivisions.Count; i++)
+                    CombinedDist += Math.Abs(Vector3.Distance(div.DivisionGO.transform.position, Destinations[i]));
+
+                DivDistPairs.Add(CombinedDist, div);
+            }
+
+            foreach (KeyValuePair<float, Division> Pair in DivDistPairs.OrderByDescending(D => D.Key))
+            {
+                float ClosestDist = 1000000000f;
+                Vector3 ChosenDestination = new Vector3();
+
+                //This method is currently "good enough" but it's pretty flawed
+                foreach (Vector3 Dest in Destinations)
+                {
+                    float DistToDestination = Math.Abs(Vector3.Distance(Pair.Value.DivisionGO.transform.position, Dest));
+
+                    if (DistToDestination < ClosestDist)
+                    {
+                        ClosestDist = DistToDestination;
+                        ChosenDestination = Dest;
+                    }
+                }
+
+                Destinations.Remove(ChosenDestination);
+
+                float DivisionAngle = AverageAngle - Pair.Value.DivisionGO.transform.localEulerAngles.y;
+
+                while (DivisionAngle >= 360 || DivisionAngle < 0)
+                {
+                    if (DivisionAngle >= 360)
+                        DivisionAngle -= 360;
+                    if (DivisionAngle < 0)
+                        DivisionAngle += 360;
+                }
+
+                switch (DivisionAngle)
+                {
+                    case float a when a <= 45f || a >= 315f:
+                        dir = Direction.Forward;
+                        break;
+                    case float a when a > 45f && a < 135f:
+                        dir = Direction.Right;
+                        break;
+                    case float a when a >= 135f && a <= 225f:
+                        dir = Direction.Back;
+                        break;
+                    case float a when a > 225f && a < 315f:
+                        dir = Direction.Left;
+                        break;
+                }
+
+                GameObject go = new GameObject();
+                go.transform.position = ChosenDestination;
+                go.transform.localEulerAngles = new Vector3(0f, AverageAngle, 0f);
+
+                foreach (Soldier child in Pair.Value.SoldierList)
+                    child.SoldierGO.transform.SetParent(go.transform);
+
+                string strName = Pair.Value.DivisionGO.name;
+
+                Destroy(Pair.Value.DivisionGO);
+                go.name = strName;
+                Pair.Value.DivisionGO = go;
+
+                Pair.Value.TempWidth = Pair.Value.Width;
+
+                Debug.Log("Division Angle: " + DivisionAngle);
+                Debug.Log(dir.ToString());
+
+                UpdateSoldierPositionsInFormationNew(Pair.Value, dir);
+
+                Pair.Value.IsInMotion = true;
+
+                foreach (Soldier sol in Pair.Value.SoldierList)
+                    sol.IsInMotion = true;
+            }
+        }
+        catch (Exception ex)
         {
             Debug.Log(ex.Message);
         }
