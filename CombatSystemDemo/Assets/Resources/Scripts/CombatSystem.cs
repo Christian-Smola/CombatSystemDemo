@@ -229,7 +229,7 @@ public class CombatSystem : MonoBehaviour
         for (int x = 0; x < NumberOfDivisions; x++)
         {
             GameObject GO = new GameObject();
-            GO.transform.position = new Vector3((x * 18f) + 500f - (18f * ((NumberOfDivisions / 2) - Offset)), 0f, 475f);
+            GO.transform.position = new Vector3((x * 18f) + 500f - (18f * ((NumberOfDivisions / 2) - Offset)), 0f, 540f);
 
             GO.name = "Celtic Division " + x.ToString();
 
@@ -256,25 +256,25 @@ public class CombatSystem : MonoBehaviour
         if (NumberOfDivisions % 2 == 0)
             Offset = 0.5f;
 
-        //for (int x = 0; x < NumberOfDivisions; x++)
-        //{
-        //    GameObject GO = new GameObject();
-        //    GO.transform.position = new Vector3((x * 15f) + 500f - (15f * ((NumberOfDivisions / 2) - Offset)), 0f, 525f);
+        for (int x = 0; x < NumberOfDivisions; x++)
+        {
+            GameObject GO = new GameObject();
+            GO.transform.position = new Vector3((x * 15f) + 500f - (15f * ((NumberOfDivisions / 2) - Offset)), 0f, 575f);
 
-        //    GO.name = "Roman Division " + x.ToString();
+            GO.name = "Roman Division " + x.ToString();
 
-        //    Division div = new Division(Side.Side2, Formation.Rect, GO, CreateNewSoldierList(68, DivisionWidth, GO, State.Sword, Military.UnitSubTypeList.Where(S => S.Name == "Legionary Sword").ToList()[0], Military.UnitType.HeavyInfantry), DivisionWidth);
+            Division div = new Division(Side.Side2, Formation.Rect, GO, CreateNewSoldierList(68, DivisionWidth, GO, State.Sword, Military.UnitSubTypeList.Where(S => S.Name == "Legionary Sword").ToList()[0], Military.UnitType.HeavyInfantry), DivisionWidth);
 
-        //    div.IsInMotion = true;
+            div.IsInMotion = true;
 
-        //    CalculateMaxAndMinWidth(div);
-        //    FunctionsToRunInChildThread.Add(() => AssignSoldiersToTheirDiv(div));
+            CalculateMaxAndMinWidth(div);
+            FunctionsToRunInChildThread.Add(() => AssignSoldiersToTheirDiv(div));
 
-        //    GO.transform.eulerAngles = new Vector3(0f, 180f, 0f);
+            GO.transform.eulerAngles = new Vector3(0f, 180f, 0f);
 
-        //    EstablishDivisionBorders(div);
-        //    DivisionList.Add(div);
-        //}
+            EstablishDivisionBorders(div);
+            DivisionList.Add(div);
+        }
 
         ChildThread = new Thread(ChildThreadFunction);
         ChildThread.Start();
