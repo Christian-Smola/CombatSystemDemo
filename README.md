@@ -1,6 +1,11 @@
 # CombatSystemDemo
-This is a demonstration of the Delusions of Grandeur combat system. While this is an early version of the system, I believe it does a good job of demonstrating my vision. 
+#### Description
+This is an early iteration of the Delusions of Grandeur combat system. In this scene, a celtic army squares off against a roman garrison. Please enjoy!
+![alt text](https://github.com/Christian-Smola/CombatSystemDemo/blob/main/CombatSystemDemo/Assets/Resources/Screenshots/Screenshot%205.jpg)
+![alt text](https://github.com/Christian-Smola/CombatSystemDemo/blob/main/CombatSystemDemo/Assets/Resources/Screenshots/Screenshot%201.jpg)
+#### Installation Instructions
+1.) Clone this repository
 
-Please Note: I recommend using Unity version 2021.1.28
+2.) Open Unity Hub and select this project, please set the editor version to 2021.1.28 or earlier
 
-All later versions will cause errors with the 3D models
+3.) Once the project has loaded, hit the play button and enjoy
